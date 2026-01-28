@@ -38,8 +38,8 @@ export default function Section10() {
   const rightRef = useRef(null);
 
   // useInView hooks
-  const leftInView = useInView(leftRef, { triggerOnce: true, threshold: 0.2 });
-  const rightInView = useInView(rightRef, { triggerOnce: true, threshold: 0.2 });
+  const leftInView = useInView(leftRef, { once: true, amount: 0.2 });
+  const rightInView = useInView(rightRef, { once: true, amount: 0.2 });
 
   // Persistent state for animation
   const [leftHasAnimated, setLeftHasAnimated] = useState(false);
