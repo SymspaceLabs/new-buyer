@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, JSX } from "react";
 import { fetchProducts } from "@/api/product";
 import { CarouselWrapper } from "@/components/carousel-wrapper";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
