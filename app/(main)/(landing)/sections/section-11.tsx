@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { JSX } from "react";
 
 export default function Section11(): JSX.Element {
   return (

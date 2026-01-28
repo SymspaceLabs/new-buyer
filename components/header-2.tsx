@@ -1,5 +1,5 @@
 // ==============================================================
-// Navbar - Main Secondary Header Component (FIXED)
+// Navbar - Main Secondary Header Component (FIXED Z-INDEX)
 // ==============================================================
 
 "use client";
@@ -62,7 +62,8 @@ export default function Header2({
 
   return (
     <nav
-      className="hidden lg:block h-[60px] rounded-none fixed top-[64px] md:top-[80px] left-0 right-0 z-40 bg-gradient-to-r from-white to-[#BEBEBE]"
+      // FIXED: Changed z-40 to z-30 (lower than Header's z-50)
+      className="hidden lg:block h-[60px] rounded-none fixed top-[64px] md:top-[80px] left-0 right-0 z-30 bg-gradient-to-r from-white to-[#BEBEBE] overflow-visible"
       style={{ boxShadow: elevation > 0 ? `0 ${elevation}px ${elevation * 2}px rgba(0,0,0,0.1)` : "none" }}
     >
       <div className="container mx-auto px-4 h-full flex items-center">
@@ -105,7 +106,7 @@ export default function Header2({
         )}
       </div>
 
-      {/* CATEGORIES MULTI-LEVEL DROPDOWN */}
+      {/* CATEGORIES MULTI-LEVEL DROPDOWN - Now with proper z-index */}
       {isCategoriesDropdownOpen && (
         <CategoriesDropdown onClose={handleCloseCategoriesDropdown} />
       )}
@@ -160,7 +161,7 @@ function CategoriesDropdown({ onClose }: { onClose: () => void }) {
         onClick={onClose}
       />
 
-      {/* Dropdown Menu */}
+      {/* Dropdown Menu - FIXED: z-50 to appear above backdrop */}
       <div className="absolute left-4 top-full mt-0 z-50">
         <Card className="py-2 w-[280px] bg-white shadow-xl border border-gray-200">
           <div className="px-3 py-2 border-b border-gray-200 flex items-center justify-between">

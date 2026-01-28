@@ -7,10 +7,10 @@ import SymGLTFViewer from '@/components/sym-gltf-viewer';
 // Define animation variants
 const listItemVariants = {
   hidden: { opacity: 0, y: -20 },
-  visible: (index) => ({
+  visible: (index: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: index * 0.2, duration: 0.6, ease: "easeOut" }
+    transition: { delay: index * 0.2, duration: 0.6, ease: "easeOut" as const }
   }),
 };
 
@@ -19,7 +19,7 @@ const rightComponentVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
+    transition: { duration: 0.8, ease: "easeOut" as const }
   },
 };
 

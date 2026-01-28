@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { useState, useEffect, ReactNode, useRef } from 'react';
+import { useState, useEffect, ReactNode, useRef, JSX } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 

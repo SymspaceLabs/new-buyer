@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { FAQS } from "@/data/faqs";
 import { motion } from "framer-motion";
 import {
