@@ -29,6 +29,7 @@ export interface ProductSize {
 export interface ProductImage {
   url: string;
   colorId?: string;
+  alt?: string;
 }
 
 export interface Product {

@@ -7,16 +7,11 @@ import { CarouselWrapper } from "@/components/carousel-wrapper";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
 import ProductCard1 from "@/components/product-card-1";
+import { Product } from "@/types/products";
 
 // =============================================================
 // Types
 // =============================================================
-
-interface Product {
-  id: string | number;
-  // Add other product properties as needed
-  [key: string]: any;
-}
 
 interface Category {
   id: number;
@@ -28,6 +23,8 @@ interface CarouselResponsive {
   breakpoint: number;
   settings: {
     slidesToShow: number;
+    infinite?: boolean;
+    variableWidth?: boolean;
   };
 }
 
@@ -127,7 +124,7 @@ export default function Section13(): JSX.Element {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" as const }}
           viewport={{ once: true }}
           className="h-full"
         >

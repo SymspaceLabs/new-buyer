@@ -9,28 +9,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { currency } from "@/lib";
+import { JSX } from "react";
+import { Product } from "@/types/products";
 
 // =============================================================
 // Types
 // =============================================================
-
-interface ProductImage {
-  url: string;
-  alt?: string;
-}
-
-interface Company {
-  entityName: string;
-}
-
-interface Product {
-  slug: string;
-  name: string;
-  price: number;
-  salePrice?: number;
-  images?: ProductImage[];
-  company: Company;
-}
 
 interface ProductCard1Props {
   product: Product;
@@ -42,7 +26,7 @@ interface ProductCard1Props {
 
 const ProductCard1 = ({ product }: ProductCard1Props): JSX.Element => {
   // Determine if a sale price exists and is less than the original price
-  const hasSale = product.salePrice && product.salePrice > 0 && product.salePrice < product.price;
+  const hasSale = product.displayPrice.salePrice && product.displayPrice.salePrice > 0 && product.displayPrice.salePrice < product.displayPrice.price;
 
   return (
     <Link href={`/products/${product.slug}`} className="w-full block">
@@ -63,19 +47,19 @@ const ProductCard1 = ({ product }: ProductCard1Props): JSX.Element => {
           </p>
 
           <p className="uppercase text-white/50 text-[10px] sm:text-[17px] whitespace-nowrap overflow-hidden text-ellipsis">
-            {product.company.entityName}
+            {product?.company?.entityName}
           </p>
 
           <div className="flex gap-2">
             {/* Conditionally render the sale price and original price */}
             <p className="text-white text-[10px] sm:text-[17px] font-medium">
-              {hasSale ? currency(product.salePrice!) : currency(product.price)}
+              {hasSale ? currency(product.displayPrice.salePrice!) : currency(product.displayPrice.price)}
             </p>
             
             {/* Only show the original price with a strikethrough if a sale is active */}
             {hasSale && (
               <p className="text-white/50 text-[10px] sm:text-[17px] font-medium line-through">
-                {currency(product.price)}
+                {currency(product.displayPrice.price)}
               </p>
             )}
           </div>
