@@ -38,7 +38,7 @@ const VIDEO_POSTER = 'https://placehold.co/1280x720/cccccc/cccccc';
 const ANIMATION_CONFIG = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
+  transition: { duration: 0.6 }
 } as const;
 
 // ============================================================================

@@ -34,7 +34,7 @@ const CATEGORIES = [
 const ANIMATION_CONFIG = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeOut" },
+  transition: { duration: 0.8 },
   viewport: { once: true, margin: "-100px" }
 } as const;
 

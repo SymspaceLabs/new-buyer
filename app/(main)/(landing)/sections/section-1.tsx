@@ -1,4 +1,4 @@
-// app/(marketing)/_sections/section-1.tsx
+// app/(main)/(landing)/sections/section-1.tsx
 'use client';
 
 import { motion } from "framer-motion";
@@ -48,7 +48,7 @@ interface VideoConfig {
 interface AnimationConfig {
   initial: { opacity: number; y: number };
   animate: { opacity: number; y: number };
-  transition: { duration: number; ease: string };
+  transition: { duration: number };
   viewport: { once: boolean; margin: string };
 }
 
@@ -106,7 +106,7 @@ const VIDEO_CONFIG: VideoConfig = {
 const ANIMATION_CONFIG: AnimationConfig = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6 },
   viewport: { once: true, margin: "-100px" }
 } as const;
 
