@@ -118,7 +118,6 @@ export default function OtpForgotPassword() {
         
         <SymSubmitButton
           isValid={!(cooldown > 0) && !loading}
-          disabled={cooldown > 0 || loading}
           onClick={handleResendCode}
           loading={loading}
         >
