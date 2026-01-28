@@ -6,6 +6,37 @@ import { usePathname } from "next/navigation";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { useEffect } from 'react';
 
+// TypeScript declarations for Facebook SDK
+declare global {
+  interface Window {
+    fbAsyncInit: () => void;
+    FB: {
+      init: (params: {
+        appId: string | undefined;
+        cookie: boolean;
+        xfbml: boolean;
+        version: string;
+      }) => void;
+      login: (
+        callback: (response: { status: string; authResponse?: any }) => void,
+        options?: { scope: string }
+      ) => void;
+    };
+    AppleID: {
+      auth: {
+        init: (config: {
+          clientId: string | undefined;
+          scope: string;
+          redirectURI: string;
+          state: string;
+          usePopup: boolean;
+        }) => void;
+        signIn: () => Promise<any>;
+      };
+    };
+  }
+}
+
 // Social Login Buttons Components
 const GoogleLoginButton = () => {
   const handleGoogleLogin = () => {
@@ -32,7 +63,7 @@ const GoogleLoginButton = () => {
 const FacebookLoginButton = () => {
   useEffect(() => {
     window.fbAsyncInit = function () {
-      FB.init({
+      window.FB.init({
         appId: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID,
         cookie: true,
         xfbml: true,
@@ -43,15 +74,15 @@ const FacebookLoginButton = () => {
     (function (d, s, id) {
       let js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
-      js = d.createElement(s);
+      js = d.createElement(s) as HTMLScriptElement;
       js.id = id;
       js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
+      fjs.parentNode?.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
   }, []);
 
   const handleFacebookLogin = () => {
-    FB.login((response) => {
+    window.FB.login((response) => {
       if (response.status === "connected") {
         console.log("Facebook connected:", response);
       }
