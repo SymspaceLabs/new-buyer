@@ -1,24 +1,12 @@
-"use client";
-
-import React from 'react';
-import Image from 'next/image';
-
 // ===============================================
 // Testimonial Card - Next.js + Tailwind + TypeScript
 // ===============================================
 
-interface User {
-  name: string;
-  avatar: string;
-  role: string;
-}
+"use client";
 
-interface Testimonial {
-  id: string;
-  rating: number;
-  content: string;
-  user: User;
-}
+import React from 'react';
+import Image from 'next/image';
+import { Testimonial } from '@/types/landing';
 
 interface TestimonialCardProps {
   testimonial: Testimonial;

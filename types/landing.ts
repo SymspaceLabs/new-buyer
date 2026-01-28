@@ -24,3 +24,16 @@ export interface SectionContent {
   cta?: CTAConfig | { primary: CTAConfig; secondary: CTAConfig };
   video?: VideoConfig;
 }
+
+
+// Types
+export interface Testimonial {
+  id: string;  // Change from number to string
+  content: string;
+  rating?: number;
+  user: {
+    name: string;
+    avatar?: string;
+    role: string;
+  }
+}

@@ -3,19 +3,7 @@
 import { motion } from 'framer-motion';
 import { TESTIMONIALS } from '@/data/testimonial';
 import TestimonialCard from '@/components/testimonial-card';
-
-// Types
-interface Testimonial {
-  id: number;
-  content: string;
-  rating?: number;
-  user: {
-    name: string;
-    avatar?: string;
-    role: string;
-  }
-
-}
+import { Testimonial } from '@/types/landing';
 
 // MarqueeSlider Component
 const MarqueeSlider: React.FC<{ testimonials: Testimonial[] }> = ({ testimonials }) => {
