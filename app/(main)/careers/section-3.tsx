@@ -10,12 +10,22 @@ import { Search, MapPin, ArrowRight } from 'lucide-react';
 
 // ==============================================================
 
+interface Job {
+  id: string;
+  title: string;
+  location: string;
+}
+
+interface JobCardProps {
+  job: Job;
+}
+
 export default function Section3() {
   const [isMobile, setIsMobile] = useState(false);
-  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [allLocations, setAllLocations] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState([]);
+  const [allLocations, setAllLocations] = useState<string[]>([]);
+  const [selectedLocation, setSelectedLocation] = useState<string[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -50,7 +60,7 @@ export default function Section3() {
   useEffect(() => {
     const fetchLocations = async () => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/jobs`);
-      const jobs = await response.json();
+      const jobs: Job[] = await response.json(); // Add type annotation here
     
       const uniqueLocations = [...new Set(jobs.map((job) => job.location))];
     
@@ -59,7 +69,7 @@ export default function Section3() {
     fetchLocations();
   }, []);
 
-  const handleLocationToggle = (location) => {
+  const handleLocationToggle = (location: string) => {
     if (location === "All Locations") {
       setSelectedLocation([]);
     } else {
@@ -149,7 +159,7 @@ export default function Section3() {
   );
 }
 
-const JobCard = ({ job }) => {
+const JobCard = ({ job }: JobCardProps) => {
   const router = useRouter();
 
   const handleCardClick = () => {
