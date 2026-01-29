@@ -1,14 +1,7 @@
-"use client";
-
-// =============================================================================
-// Section 5 - Team - About Us 
-// =============================================================================
-
 import Link from "next/link";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion"; // Import Variants type
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -72,7 +65,7 @@ const staffs: Staff[] = [
 
 export default function Section5() {
   // Container animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -83,24 +76,24 @@ export default function Section5() {
     }
   };
 
-  // Title animation
-  const titleVariants = {
+  // Title animation - using 'as const' to make it a tuple
+  const titleVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] as const }
     }
   };
 
-  // Card animation
-  const cardVariants = {
+  // Card animation - using 'as const' to make it a tuple
+  const cardVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8, y: 50 },
     visible: { 
       opacity: 1, 
       scale: 1, 
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] as const }
     }
   };
 

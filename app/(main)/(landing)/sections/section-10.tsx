@@ -10,7 +10,7 @@ const listItemVariants = {
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: index * 0.2, duration: 0.6, ease: "easeOut" as const }
+    transition: { delay: index * 0.2, duration: 0.6, ease: [0.4, 0, 0.2, 1] as const }
   }),
 };
 
@@ -19,7 +19,7 @@ const rightComponentVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: "easeOut" as const }
+    transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as const }
   },
 };
 

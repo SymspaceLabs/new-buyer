@@ -23,7 +23,7 @@ if (isMobile) {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1] }}
         >
           <Image
             src="/assets/images/staging/hero.png"
@@ -61,7 +61,7 @@ if (isMobile) {
             alt={src}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay }}
+            transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1], delay }}
             className="absolute w-auto h-auto max-w-[40%] sm:max-w-full md:max-w-full max-h-[40%] sm:max-h-full md:max-h-full p-2"
             style={{ top, left, right, zIndex }}
           />
@@ -73,7 +73,7 @@ if (isMobile) {
           alt="sofa"
           initial={{ opacity: 0, x: 0 }}
           animate={{ opacity: 1, x: -50 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 1.5 }}
+          transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1], delay: 1.5 }}
           className="absolute top-[50%] right-[-10%] w-auto h-auto max-w-[40%] sm:max-w-full md:max-w-full max-h-[40%] sm:max-h-full md:max-h-full z-[2] p-2"
         />
 
@@ -89,7 +89,7 @@ if (isMobile) {
             alt={src}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 2, ease: "easeOut", delay }}
+            transition={{ duration: 2, ease: [0.4, 0, 0.2, 1], delay }}
             className="absolute w-auto h-auto max-w-[40%] sm:max-w-full md:max-w-full max-h-[40%] sm:max-h-full md:max-h-full p-2"
             style={{ top, left, zIndex }}
           />

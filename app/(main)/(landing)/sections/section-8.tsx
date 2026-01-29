@@ -49,7 +49,7 @@ const CARDS_CONTENT = {
 const ANIMATION_CONFIG = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeOut" as const },
+  transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as const },
   viewport: { once: true, margin: "-100px" }
 };
 

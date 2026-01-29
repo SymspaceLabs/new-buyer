@@ -124,7 +124,7 @@ export default function Section13(): JSX.Element {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" as const }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] as const }}
           viewport={{ once: true }}
           className="h-full"
         >
