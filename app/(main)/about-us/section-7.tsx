@@ -17,17 +17,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-interface Blog {
-  id: string;
-  slug: string;
-  title: string;
-  handle_url_title: string;
-  image: string;
-}
+import { Article } from "@/types/article";
 
 export default function Section7() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -156,7 +149,7 @@ export default function Section7() {
 }
 
 interface BlogCardProps {
-  blog: Blog;
+  blog: Article;
 }
 
 const BlogCard = ({ blog }: BlogCardProps) => {
@@ -178,7 +171,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
     >
       <div className="max-h-[150px] h-[150px] overflow-hidden flex justify-center items-center rounded-[20px]">
         <Image 
-          src={blog.image} 
+          src={blog.image || ''} 
           width={500} 
           height={150} 
           alt={blog.title}

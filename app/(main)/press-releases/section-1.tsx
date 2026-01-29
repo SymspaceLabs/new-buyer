@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react"; // Replaced MUI icons with standard lucide-react or similar
 import { H1 } from "@/components/Typography";
 import Image from "next/image";
+import { Article } from "@/types/article";
 
 export default function Section1() {
   const [blogs, setBlogs] = useState([]);
@@ -101,7 +102,11 @@ export default function Section1() {
   );
 }
 
-const BlogCard = ({ blog }) => {
+interface BlogCardProps {
+  blog: Article;
+}
+
+const BlogCard = ({ blog }: BlogCardProps) => {
   const router = useRouter();
 
   return (
@@ -117,7 +122,7 @@ const BlogCard = ({ blog }) => {
     >
       <div className="h-[200px] overflow-hidden flex justify-center items-center rounded-[20px]">
         <Image 
-          src={blog.image} 
+          src={blog.image || ''} 
           width={500} 
           height={500} 
           alt="blog-image" 

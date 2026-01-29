@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ReactNode } from "react"; // Import ReactNode
+import { Button } from "@/components/ui/button";
 
 // Custom styles for complex effects that Tailwind doesn't support
 const customStyles = {
@@ -32,7 +33,7 @@ export default function Section2() {
       >
         <div className="flex flex-col items-center py-2 sm:py-5 px-5 gap-2 sm:gap-4">
           {/* Header */}
-          <h1 className="text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
+          <h1 className="text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center font-elemental" style={{ wordSpacing: '10px' }}>
             bring empty spaces to life
           </h1>
 
@@ -43,9 +44,9 @@ export default function Section2() {
 
           {/* Button */}
           <Link href={`${process.env.NEXT_PUBLIC_SELLER_URL}/register`} passHref>
-            <button className="h-full flex-1 sm:flex-none sm:min-w-[250px] text-white rounded-[50px] border-2 border-white py-1 sm:py-2 px-5 text-[10px] sm:text-base transition-all duration-300 ease-in-out hover:bg-black hover:text-white">
+            <Button className="font-elemental lowercase h-full flex-1 sm:flex-none sm:min-w-[250px] text-white rounded-[50px] border-2 border-white py-2 sm:py-2 px-5 text-[10px] sm:text-base transition-all duration-300 ease-in-out hover:bg-black hover:text-white">
               start staging now
-            </button>
+            </Button>
           </Link>
         </div>
       </motion.div>

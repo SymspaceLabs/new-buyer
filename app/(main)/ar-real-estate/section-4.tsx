@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 // Custom styles for complex effects that Tailwind doesn't support
 const customStyles = {
@@ -35,7 +36,7 @@ export default function Section4() {
           {/* Left Side Image */}
           <div className="flex flex-col items-center">
             <Image
-              src='/assets/images/staging/customize-5.png'
+              src='/images/ar-real-estate/customize-5.png'
               alt="AR Experience"
               width={500}
               height={500}
@@ -52,7 +53,7 @@ export default function Section4() {
               filter: 'drop-shadow(0px 5px 50px rgba(0, 0, 0, 0.25))',
             }}
           >
-            <h1 className="text-white text-xs sm:text-2xl">
+            <h1 className="font-elemental text-white text-xs sm:text-2xl">
               Make every Space Your Own with SYMSPACE
             </h1>
             <p className="text-white text-xs sm:text-lg">
@@ -60,8 +61,8 @@ export default function Section4() {
             </p>
             <div className="flex flex-row items-center justify-center">
               <Link href='/'>
-                <button 
-                  className="rounded-[30px] text-[11px] text-white px-2 py-1 border border-white/20 backdrop-blur-[10px] hover:border-white transition-all"
+                <Button 
+                  className="font-elemental lowercase rounded-[30px] text-[11px] text-white px-4 py-2 border border-white/20 backdrop-blur-[10px] hover:border-white transition-all"
                   style={{
                     background: 'linear-gradient(117.54deg, rgba(255, 255, 255, 0.5) -19.85%, rgba(235, 235, 235, 0.367354) 4.2%, rgba(224, 224, 224, 0.287504) 13.88%, rgba(212, 212, 212, 0.21131) 27.98%, rgba(207, 207, 207, 0.175584) 37.8%, rgba(202, 202, 202, 0.143432) 44.38%, rgba(200, 200, 200, 0.126299) 50.54%, rgba(196, 196, 196, 0.1) 60.21%)',
                     boxShadow: '0px 1px 24px -1px rgba(0, 0, 0, 0.18)',
@@ -74,7 +75,7 @@ export default function Section4() {
                   }}
                 >
                   Join the Waitlist
-                </button>
+                </Button>
               </Link>
             </div>
           </div>

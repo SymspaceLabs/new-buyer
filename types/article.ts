@@ -10,5 +10,6 @@ export interface Article {
   publishedAt?: string
   author_url?: string
   article_source_url?: string
+  handle_url_title?: string
   createdAt: string
 }

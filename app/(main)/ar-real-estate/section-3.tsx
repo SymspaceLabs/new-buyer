@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SetStateAction, useState } from 'react';
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 // Custom styles for complex effects that Tailwind doesn't support
 const customStyles = {
@@ -24,19 +25,19 @@ const customStyles = {
 const benefits = [
   { 
     title: 'personalize material and style',
-    imgUrl: '/assets/images/staging/customize-1.png',
+    imgUrl: '/images/ar-real-estate/customize-1.png',
     content: 'Upload & edit 2D or 3D floor plans to generate immersive 3D layouts.',
     bullet: ' No floor plan? No problem. Start by selecting one of our templates or even  draw your floor plan with the specified measurements you want.'
   },
   { 
     title: 'floor plans',
-    imgUrl: '/assets/images/staging/customize-2.png',
+    imgUrl: '/images/ar-real-estate/customize-2.png',
     content: 'Render or import 3D models of properties and begin customizing the style such as flooring, walls, material, paint, countertops, and furniture.',
     bullet: 'Drag and Drop 3D products  anywhere to customize homes with  true-to-size products representing the property in real-life.'
   },
   { 
     title: '3d renders & Virtual tours',
-    imgUrl: '/assets/images/staging/customize-3.png',
+    imgUrl: '/images/ar-real-estate/customize-3.png',
     content: 'Render high-quality videos/images of your customized home and offer virtual walkthroughs for potential buyers/tenants.',
     bullet: 'National Association of Realtors (NAR) found virtual staging reduces staging costs by up to 80% and increases rental value by 20% with AR-powered staging'
   },
@@ -60,7 +61,7 @@ export default function Section3() {
       >
         <div className="flex flex-col items-center py-2 sm:py-5 px-3 gap-2 sm:gap-4">
           {/* Header */}
-          <h1 className="text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
+          <h1 className="font-elemental text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
             customize, configure & tour spaces in real-time
           </h1>
 
@@ -78,7 +79,7 @@ export default function Section3() {
                 style={customStyles.textBubbleBoxShadow}
                 onMouseEnter={() => handleBenefitChange(benefit)}
               >
-                <h1 className="text-[8px] sm:text-[14px] text-white">
+                <h1 className="font-elemental text-[8px] sm:text-[14px] text-white">
                   {benefit.title}
                 </h1>
               </div>
@@ -104,8 +105,8 @@ export default function Section3() {
               </p>
               <div className="flex flex-row items-center justify-center">
                 <Link href='/'>
-                  <button 
-                    className="rounded-[30px] text-[11px] text-white px-2 py-1 border border-white/20 backdrop-blur-[10px] hover:border-white transition-all"
+                  <Button 
+                    className="font-elemental lowercase rounded-[30px] text-[11px] text-white px-4 py-3 border border-white/20 backdrop-blur-[10px] hover:border-white transition-all"
                     style={{
                       background: 'linear-gradient(117.54deg, rgba(255, 255, 255, 0.5) -19.85%, rgba(235, 235, 235, 0.367354) 4.2%, rgba(224, 224, 224, 0.287504) 13.88%, rgba(212, 212, 212, 0.21131) 27.98%, rgba(207, 207, 207, 0.175584) 37.8%, rgba(202, 202, 202, 0.143432) 44.38%, rgba(200, 200, 200, 0.126299) 50.54%, rgba(196, 196, 196, 0.1) 60.21%)',
                       boxShadow: '0px 1px 24px -1px rgba(0, 0, 0, 0.18)',
@@ -118,7 +119,7 @@ export default function Section3() {
                     }}
                   >
                     Explore Now
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </div>

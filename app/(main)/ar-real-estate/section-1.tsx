@@ -26,7 +26,7 @@ if (isMobile) {
           transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1] as const }}
         >
           <Image
-            src="/assets/images/staging/hero.png"
+            src="/images/ar-real-estate/hero.png"
             width={500}
             height={500}
             alt="Hero"
@@ -42,7 +42,7 @@ if (isMobile) {
       <div className="relative h-[350px] sm:h-[500px] md:h-[800px] w-full">
         {/* Background Image */}
         <Image
-          src="/assets/images/staging/hero-1.png"
+          src="/images/ar-real-estate/hero-1.png"
           height={800}
           width={800}
           alt="Hero Background"
@@ -57,7 +57,7 @@ if (isMobile) {
         ].map(({ src, delay, top, left, right, zIndex }) => (
           <motion.img
             key={src}
-            src={`/assets/images/staging/${src}`}
+            src={`/images/ar-real-estate/${src}`}
             alt={src}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -69,7 +69,7 @@ if (isMobile) {
 
         {/* Sofa Animation */}
         <motion.img
-          src="/assets/images/staging/hero-5.png"
+          src="/images/ar-real-estate/hero-5.png"
           alt="sofa"
           initial={{ opacity: 0, x: 0 }}
           animate={{ opacity: 1, x: -50 }}
@@ -85,7 +85,7 @@ if (isMobile) {
         ].map(({ src, delay, top, left, zIndex }) => (
           <motion.img
             key={src}
-            src={`/assets/images/staging/${src}`}
+            src={`/images/ar-real-estate/${src}`}
             alt={src}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
