@@ -33,11 +33,7 @@ function Section1({ isSubmitted, setIsSubmitted }: Section1Props) {
     const allFieldsFilled = fullName && email && topic && message;
 
     if (!allFieldsFilled) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
+      toast.error("Please fill in all required fields."); // Changed this
       return;
     }
 
@@ -60,23 +56,12 @@ function Section1({ isSubmitted, setIsSubmitted }: Section1Props) {
       if (response.ok) {
         setIsSubmitted(true);
         clearForm();
-        toast({
-          title: "Success",
-          description: "We've received your message!",
-        });
+        toast.success("We've received your message!"); // Changed this
       } else {
-        toast({
-          title: "Error",
-          description: data.message,
-          variant: "destructive",
-        });
+        toast.error(data.message || "Something went wrong"); // Changed this
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Network error. Please try again.",
-        variant: "destructive",
-      });
+      toast.error("Network error. Please try again."); // Changed this
     }
 
     setLoading(false);
