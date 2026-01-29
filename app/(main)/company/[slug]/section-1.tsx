@@ -12,21 +12,7 @@ import {
 } from 'lucide-react';
 import { ReactNode } from 'react';
 import Image from 'next/image';
-
-interface Company {
-  banner?: string;
-  logo?: string;
-  entityName: string;
-  description: string;
-  tagLine: string;
-  website?: string;
-  instagram?: string;
-  twitter?: string;
-  youtube?: string;
-  facebook?: string;
-  emailSupport: string;
-  phoneSupport: string;
-}
+import { Company } from '@/types/company';
 
 interface Section1Props {
   company: Company;

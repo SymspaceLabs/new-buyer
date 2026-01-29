@@ -5,19 +5,11 @@ import { useEffect, useState } from "react"
 import { Loader2 } from "lucide-react"
 import Section1 from "./section-1"
 import Section2 from "./section-2"
+import { Company } from "@/types/company"
 
 // ====================================================================
 // Type Definitions
 // ====================================================================
-
-interface Company {
-  id: string
-  slug: string
-  entityName: string
-  description?: string
-  logo?: string
-  products: any[]
-}
 
 interface CompanyDetailsPageProps {
   slug: string
