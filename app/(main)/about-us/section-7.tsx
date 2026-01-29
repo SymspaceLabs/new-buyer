@@ -63,7 +63,7 @@ export default function Section7() {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] as const }
     }
   };
 
@@ -73,7 +73,7 @@ export default function Section7() {
       opacity: 1, 
       scale: 1, 
       y: 0,
-      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }
+      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] as const }
     }
   };
 
