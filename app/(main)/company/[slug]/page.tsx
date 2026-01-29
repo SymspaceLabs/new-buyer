@@ -3,19 +3,10 @@
 
 import { Metadata } from "next"
 import CompanyDetailsPage from "./company-details"
-
+import { Company } from "@/types/company"
 // ====================================================================
 // Type Definitions
 // ====================================================================
-
-interface Company {
-  id: string
-  slug: string
-  entityName: string
-  description?: string
-  logo?: string
-  products: any[]
-}
 
 interface CompanyPageProps {
   params: {

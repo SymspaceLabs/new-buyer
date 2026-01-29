@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/collapsible"
 import { cn } from "@/lib/utils"
 
+import { Company } from "@/types/company"
+
 // --- Type Definitions ---
 interface NavItem {
   title: string
@@ -36,11 +38,6 @@ interface Product {
     hasSale: boolean
   }
   stock: number
-}
-
-interface Company {
-  entityName?: string
-  slug?: string
 }
 
 interface Section2Props {
@@ -265,7 +262,7 @@ function ProductCard3({
 
 // --- Main Section2 Component ---
 export default function Section2({ products, company }: Section2Props) {
-  const [sidebarHeight] = useState(0)
+  const [sidebarHeight] = useState<string>("85vh")
   const sidenavWidth = layoutConstant.grocerySidenavWidth || 280
 
   const handleNavSelect = (href: string) => {

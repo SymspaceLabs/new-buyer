@@ -7,16 +7,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Heart } from 'lucide-react';
 import { useState } from 'react';
+import { Company } from '@/types/company';
 
 interface DisplayPrice {
   price: number;
   salePrice?: number;
   hasSale?: boolean;
-}
-
-interface Company {
-  id: string | number;
-  entityName: string;
 }
 
 interface ProductImage {

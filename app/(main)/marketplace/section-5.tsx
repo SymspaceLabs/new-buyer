@@ -9,6 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Carousel } from "@/components/carousel";
+import { Company } from "@/types/company";
 
 // Currency formatting utility
 const currency = (amount: number) => {
@@ -22,10 +23,6 @@ interface DisplayPrice {
   salePrice: number;
   price: number;
   hasSale: boolean;
-}
-
-interface Company {
-  entityName: string;
 }
 
 interface ProductImage {
