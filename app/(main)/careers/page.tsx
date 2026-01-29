@@ -34,10 +34,10 @@ export default function CareersPageView() {
       
       {/* GRADIENT CIRCLES */}
       {/* Blob 1: Hero Section Left */}
-      <BlobBox top={0} right="5%" background="#0366FE" /> {/* BLUE */}
+      <BlobBox top="0%" right="5%" background="#0366FE" /> {/* BLUE */}
       
       {/* Blob 2: Open Roles Left */}
-      <BlobBox top="45%" left={0} background="#FFF" displayNoneMobile={true} /> {/* WHITE */}
+      <BlobBox top="45%" left="0%" background="#FFF" displayNoneMobile={true} /> {/* WHITE */}
       <BlobBox top="45%" left="5%" background="#0366FE"  /> {/* BLUE */}
 
       {/* Blob 3: Open Roles Right */}
