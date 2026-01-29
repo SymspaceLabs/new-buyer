@@ -14,22 +14,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import DOMPurify from "isomorphic-dompurify"
+import { Article } from "@/types/article"
 
 // ====================================================================
 // Type Definitions
 // ====================================================================
-
-interface Article {
-  id: string
-  slug: string
-  title: string
-  content: string
-  image: string
-  author: string
-  author_url?: string
-  article_source_url?: string
-  createdAt: string
-}
 
 interface Section1Props {
   article: Article
@@ -70,6 +59,9 @@ export default function Section1({ article }: Section1Props) {
     ADD_TAGS: ['iframe'], // Allow iframes if needed for embeds
     ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling'], // Allow iframe attributes
   })
+  
+  // Default fallback image
+  const articleImage = article.image || ''
 
   return (
     <div className="min-h-[75vh] flex flex-col items-center py-4 px-4 sm:px-0 pt-[100px] md:pt-[200px]">
@@ -100,7 +92,7 @@ export default function Section1({ article }: Section1Props) {
         {/* Banner Image */}
         <div className="relative w-full aspect-[7/4] rounded-lg overflow-hidden">
           <Image 
-            src={article.image}
+            src={articleImage}
             alt="Article Banner" 
             fill
             className="object-cover"

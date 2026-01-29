@@ -1,26 +1,15 @@
 // app/article/[slug]/article-details-page.tsx
 "use client"
 
-import { useEffect, useState } from "react"
-import { Loader2 } from "lucide-react"
 import Section1 from "./section-1"
 import Section2 from "./section-2"
+import { Loader2 } from "lucide-react"
+import { Article } from "@/types/article"
+import { useEffect, useState } from "react"
 
 // ====================================================================
 // Type Definitions
 // ====================================================================
-
-interface Article {
-  id: string
-  slug: string
-  title: string
-  description?: string
-  content?: string
-  thumbnail?: string
-  author?: string
-  publishedAt?: string
-}
-
 interface ArticleDetailsPageViewProps {
   slug: string
 }
