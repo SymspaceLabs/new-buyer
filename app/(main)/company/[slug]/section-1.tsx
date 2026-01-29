@@ -10,11 +10,36 @@ import {
   Facebook, 
   Instagram 
 } from 'lucide-react';
-
+import { ReactNode } from 'react';
 import Image from 'next/image';
 
-export default function Section1({ company }) {
-  const getWebsiteUrl = (url) => {
+interface Company {
+  banner?: string;
+  logo?: string;
+  entityName: string;
+  description: string;
+  tagLine: string;
+  website?: string;
+  instagram?: string;
+  twitter?: string;
+  youtube?: string;
+  facebook?: string;
+  emailSupport: string;
+  phoneSupport: string;
+}
+
+interface Section1Props {
+  company: Company;
+}
+
+interface SocialLinkProps {
+  href?: string;
+  icon: ReactNode;
+}
+
+export default function Section1({ company }: Section1Props) {
+  
+  const getWebsiteUrl = (url?: string) => {
     if (!url) return "#";
     return url.startsWith("http://") || url.startsWith("https://") 
       ? url 
@@ -119,10 +144,10 @@ export default function Section1({ company }) {
 }
 
 // Helper component for Social Links
-function SocialLink({ href, icon }) {
+function SocialLink({ href, icon }: SocialLinkProps) {
   if (!href) return null;
   
-  const getWebsiteUrl = (url) => {
+  const getWebsiteUrl = (url?: string) => {
     if (!url) return "#";
     return url.startsWith("http://") || url.startsWith("https://") 
       ? url 
