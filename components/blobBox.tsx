@@ -1,4 +1,19 @@
+// ===========================================
+// BlobBox Component
+// components/blobBox.tsx
+// ===========================================
+
 "use client";
+
+interface BlobBoxProps {
+  top?: string | null;
+  right?: string | null;
+  bottom?: string | null;
+  left?: string | null;
+  background?: string;
+  displayNoneMobile?: boolean;
+  widthHeight?: string;
+}
 
 export const BlobBox = ({
   top = null,
@@ -8,15 +23,15 @@ export const BlobBox = ({
   background = "#0366FE",
   displayNoneMobile = false,
   widthHeight = '500px',
-}) => {
+}: BlobBoxProps) => {
   return (
     <div
       className={`${displayNoneMobile ? 'hidden sm:block' : 'block'} absolute rounded-full filter blur-[75px] opacity-50 animate-blob`}
       style={{
-        top,
-        right,
-        bottom,
-        left,
+        top: top ?? undefined,
+        right: right ?? undefined,
+        bottom: bottom ?? undefined,
+        left: left ?? undefined,
         width: widthHeight,
         height: widthHeight,
         background,
