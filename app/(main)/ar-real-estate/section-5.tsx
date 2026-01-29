@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
@@ -35,7 +35,7 @@ const benefits = [
 export default function Section5() {
   const [activeBenefit, setActiveBenefit] = useState(benefits[0]);
   
-  const handleBenefitChange = (benefit) => {
+  const handleBenefitChange = (benefit: SetStateAction<{ title: string; imgUrl: string; }>) => {
     setActiveBenefit(benefit); 
   };
 
