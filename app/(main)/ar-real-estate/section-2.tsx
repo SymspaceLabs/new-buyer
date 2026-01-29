@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ReactNode } from "react"; // Import ReactNode
 
 // Custom styles for complex effects that Tailwind doesn't support
 const customStyles = {
@@ -55,7 +56,11 @@ export default function Section2() {
 // Example usage of other styles as separate components:
 
 // Text Bubble Container
-export function TextBubbleContainer({ children }) {
+interface TextBubbleContainerProps {
+  children: ReactNode;
+}
+
+export function TextBubbleContainer({ children }: TextBubbleContainerProps) {
   return (
     <div className="py-3 flex flex-wrap w-full justify-between sm:justify-center gap-2 sm:gap-3">
       {children}
@@ -64,7 +69,11 @@ export function TextBubbleContainer({ children }) {
 }
 
 // Text Bubble
-export function TextBubble({ children }) {
+interface TextBubbleProps {
+  children: ReactNode;
+}
+
+export function TextBubble({ children }: TextBubbleProps) {
   return (
     <div 
       className="text-center flex items-center justify-center max-w-[180px] sm:max-w-[250px] md:max-w-[500px] min-w-[100px] min-h-[40px] py-1 sm:py-2 px-2 sm:px-3 mb-0 sm:mb-2 bg-white/35 rounded-[80px] transition-colors hover:bg-[rgba(3,102,254,0.6)]"
@@ -76,7 +85,11 @@ export function TextBubble({ children }) {
 }
 
 // Glass Card
-export function GlassCard({ children }) {
+interface GlassCardProps {
+  children: ReactNode;
+}
+
+export function GlassCard({ children }: GlassCardProps) {
   return (
     <div 
       className="rounded-[50px] backdrop-blur-[10.0285px] p-5 sm:p-10 w-full sm:w-1/2"
@@ -92,7 +105,11 @@ export function GlassCard({ children }) {
 }
 
 // Transparent Button
-export function ButtonTransparent({ children, ...props }) {
+interface ButtonTransparentProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+}
+
+export function ButtonTransparent({ children, ...props }: ButtonTransparentProps) {
   return (
     <button 
       className="rounded-[30px] text-[11px] text-white px-2 border border-white/20 backdrop-blur-[10px] hover:border-white transition-all"
