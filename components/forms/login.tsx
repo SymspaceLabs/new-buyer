@@ -15,10 +15,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   isChecked,
   setIsChecked
 }) => {
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
     setEmail(event.target.value);
   
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
     setPassword(event.target.value);
 
   return (
@@ -60,12 +60,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({
             </label>
           </div>
         )}
-        <a
-          href="/forgot-password"
-          className="text-white text-xs underline cursor-pointer hover:text-gray-300"
-        >
-          Forgot your password?
-        </a>
+        
+          <a href="/forgot-password"
+            className="text-white text-xs underline cursor-pointer hover:text-gray-300"
+          >
+            Forgot your password?
+          </a>
       </div>
     </div>
   );

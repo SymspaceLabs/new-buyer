@@ -13,7 +13,7 @@ export const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
   email,
   setEmail
 }) => {
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
     setEmail(event.target.value);
 
   return (
