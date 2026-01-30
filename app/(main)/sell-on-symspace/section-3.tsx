@@ -7,17 +7,17 @@
 import { motion } from "framer-motion";
 
 // =======================================================
-// Blog Card Component
+// Stat Card Component
 // =======================================================
 
 import { useEffect, useState, useRef } from "react";
 
-interface BlogCardProps {
+interface StatCardProps {
   title: number;
   subTitle: string;
 }
 
-function BlogCard({ title, subTitle }: BlogCardProps) {
+function StatCard({ title, subTitle }: StatCardProps) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -69,11 +69,11 @@ function BlogCard({ title, subTitle }: BlogCardProps) {
       className="p-1 sm:p-5 flex flex-col items-center justify-center"
     >
       {/* Animated count */}
-      <h1 className="text-center text-[#2F2F2F] text-[30px] sm:text-[96px] font-bold">
+      <h1 className="font-elemental text-center text-[#2F2F2F] text-[30px] sm:text-[96px]">
         {count}%
       </h1>
       {/* Subtitle */}
-      <p className="text-[12px] sm:text-base text-[#909090] text-center">
+      <p className="font-helvetica text-[12px] sm:text-base text-[#909090] text-center">
         {subTitle}
       </p>
     </div>
@@ -129,12 +129,12 @@ export default function Section3() {
         <div className="container mx-auto px-4">
           {/* Title with fade-in effect */}
           <motion.div variants={fadeInVariant}>
-            <h1 className="text-[20px] sm:text-[32px] text-center text-black font-bold pt-0 sm:pt-8 pb-3">
+            <h1 className="font-elemental text-[20px] sm:text-[32px] text-center text-black pt-0 sm:pt-8 pb-3">
               engage your customers
             </h1>
           </motion.div>
 
-          {/* Blog Cards with staggered animation */}
+          {/* Stat Cards with staggered animation */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -142,9 +142,9 @@ export default function Section3() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {stats.map((blog) => (
-                <motion.div key={blog.id} variants={fadeInVariant}>
-                  <BlogCard title={blog.count} subTitle={blog.subTitle} />
+              {stats.map((stat) => (
+                <motion.div key={stat.id} variants={fadeInVariant}>
+                  <StatCard title={stat.count} subTitle={stat.subTitle} />
                 </motion.div>
               ))}
             </div>

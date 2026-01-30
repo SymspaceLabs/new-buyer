@@ -88,13 +88,13 @@ export default function Section6() {
         >
           <div className="p-5">
             {/* Main Header */}
-            <h1 className="text-[20px] sm:text-[36px] text-white font-bold font-helvetica leading-[1.2] mb-4">
+            <h1 className="text-[20px] sm:text-[36px] text-white font-elemental leading-[1.2] mb-4">
               generate 3d models
               <br /> of any retail product
             </h1>
 
             {/* Subheader */}
-            <p className="text-[14px] sm:text-[18px] mb-4 text-white">
+            <p className="font-helvetica text-[14px] sm:text-[18px] mb-4 text-white">
               Customize your customer experience today
             </p>
 
@@ -102,10 +102,10 @@ export default function Section6() {
             {!showInput && (
               <Button
                 onClick={handleBetaAccessClick}
-                className="gap-2 text-white rounded-[50px] py-6 px-4 bg-gradient-to-br from-[#18C8FF] via-[#6B7FFF] to-[#933FFE] hover:opacity-90 transition-opacity"
+                className="gap-2 text-white rounded-[50px] py-5 px-8 bg-gradient-to-br from-[#18C8FF] via-[#6B7FFF] to-[#933FFE] hover:opacity-90 transition-opacity"
               >
                 {/* Button Text */}
-                <span className="text-xs font-bold">Beta Access</span>
+                <span className="font-elemental lowercase text-xs">Beta Access</span>
 
                 {/* Icon inside the Button */}
                 <div className="w-[35px] flex items-center justify-center">
@@ -113,7 +113,7 @@ export default function Section6() {
                     alt="sparkler"
                     width={25}
                     height={25}
-                    src="/assets/images/sparkler-white.webp"
+                    src="/images/sparkler-white.webp"
                   />
                 </div>
               </Button>
@@ -140,7 +140,7 @@ export default function Section6() {
                     />
                     <Button
                       onClick={handleEmailSubmit}
-                      className={`absolute right-[10px] top-1/2 -translate-y-1/2 border border-white rounded-[50px] px-3 py-[6px] ${
+                      className={`font-elemental absolute right-[10px] top-1/2 -translate-y-1/2 border border-white rounded-[50px] px-3 py-[6px] ${
                         isSubmitted
                           ? "bg-white text-black hover:bg-gray-100"
                           : "bg-gradient-to-r from-[#666666] to-[#1D1D1D] text-white hover:from-[#888888] hover:to-[#2D2D2D]"

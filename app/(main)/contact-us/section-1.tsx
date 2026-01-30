@@ -77,10 +77,10 @@ function Section1({ isSubmitted, setIsSubmitted }: Section1Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 items-center">
             {/* Left Content */}
             <div className="text-center mb-5 md:mb-0">
-              <h1 className="text-[30px] sm:text-[40px] leading-[1.2] text-white font-bold">
+              <h1 className="text-[30px] sm:text-[40px] leading-[1.2] text-white font-elemental">
                 get in touch
               </h1>
-              <p className="font-light text-white leading-[1.2] text-sm sm:text-base">
+              <p className="font-helvetica text-white leading-[1.2] text-sm sm:text-base">
                 We're here to help. Why wait? Reach out today.
               </p>
             </div>
@@ -113,7 +113,7 @@ function Section1({ isSubmitted, setIsSubmitted }: Section1Props) {
                 Submit
               </SymButton>
 
-              <span className="text-white text-sm inline-block">
+              <span className="text-white text-sm inline-block font-helvetica">
                 By clicking Submit, you agree to our{" "}
                 <BoxLink title="Terms" href="/terms-and-conditions#terms" />,{" "}
                 <BoxLink title="Privacy Policy" href="/terms-and-conditions#privacy" /> and{" "}

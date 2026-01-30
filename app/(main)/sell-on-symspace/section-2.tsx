@@ -18,12 +18,12 @@ export default function Section2() {
       <div className="py-3">
         <div className="container mx-auto px-4">
           {/* Title */}
-          <h1 className="text-[20px] sm:text-[32px] text-center text-[#4E4E4E] font-bold pt-0 sm:pt-8 pb-1">
+          <h1 className="font-elemental text-[20px] sm:text-[32px] text-center text-[#4E4E4E] pt-0 sm:pt-8 pb-1">
             trusted by all our partners
           </h1>
 
           {/* Subtitle */}
-          <p className="text-center text-[#4E4E4E] pb-3 text-[12px] sm:text-base">
+          <p className="font-helvetica text-center text-[#4E4E4E] pb-3 text-[12px] sm:text-base">
             We work with the world's biggest organizations, brands, and marketplaces.
           </p>
 

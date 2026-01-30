@@ -76,12 +76,12 @@ export default function Section1() {
       <div className="relative z-10 flex flex-col items-center">
         
         {/* Headline */}
-        <h1 className="text-white text-xl sm:text-[35px] md:text-[60px] font-bold leading-tight">
+        <h1 className="font-elemental text-white text-xl sm:text-[35px] md:text-[60px] leading-tight">
           Shaping the future of<br /> accessible ar Commerce
         </h1>
 
         {/* Promotional Offer */}
-        <p className="mb-8 text-white text-xs sm:text-sm md:text-base max-w-[360px] sm:max-w-[1000px] md:max-w-[1500px]">
+        <p className="font-helvetica mb-8 text-white text-xs sm:text-sm md:text-base max-w-[360px] sm:max-w-[1000px] md:max-w-[1500px]">
           Empowering Inclusion, Sustainability, and Innovation through Augmented Reality + Artificial Intelligence
         </p>
 
@@ -90,7 +90,7 @@ export default function Section1() {
           <div className="flex gap-0 sm:gap-2.5 pt-2.5 flex-col sm:flex-row">
             <Button 
               onClick={handleShowEmailInput}
-              className="lowercase text-base bg-black text-white rounded-[50px] border-2 border-transparent py-4 px-[30px] transition-all duration-300 ease-in-out hover:bg-gradient-to-br hover:from-[#18C8FF] hover:to-[#933FFE] hover:border-white"
+              className="font-elemental lowercase text-base bg-black text-white rounded-[50px] border-2 border-transparent py-4 px-[30px] transition-all duration-300 ease-in-out hover:bg-gradient-to-br hover:from-[#18C8FF] hover:to-[#933FFE] hover:border-white"
             >
               Get Involved
             </Button>
@@ -114,7 +114,7 @@ export default function Section1() {
                 />
                 <Button
                   onClick={handleEmailSubmit}
-                  className={`absolute right-2.5 top-1/2 -translate-y-1/2 ${
+                  className={`font-elemental absolute right-2.5 top-1/2 -translate-y-1/2 ${
                     isSubmitted 
                       ? 'bg-white text-black hover:bg-gray-100' 
                       : 'bg-gradient-to-r from-[#666666] to-[#1D1D1D] text-white hover:from-[#888888] hover:to-[#2D2D2D]'

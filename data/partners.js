@@ -1,8 +1,8 @@
 export const PARTNERS = [
-  "/assets/images/companies/1.png",
-  "/assets/images/companies/2.png",
-  "/assets/images/companies/3.png",
-  "/assets/images/companies/4.png",
-  "/assets/images/companies/5.png",
-  "/assets/images/companies/6.png",
+  "/images/sell-on-symspace/company-1.png",
+  "/images/sell-on-symspace/company-2.png",
+  "/images/sell-on-symspace/company-3.png",
+  "/images/sell-on-symspace/company-4.png",
+  "/images/sell-on-symspace/company-5.png",
+  "/images/sell-on-symspace/company-6.png",
 ];

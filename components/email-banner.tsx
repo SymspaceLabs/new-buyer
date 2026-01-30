@@ -130,11 +130,11 @@ export default function EmailBanner({ title }: EmailBannerProps) {
                     }
                     value={email}
                     onChange={handleEmailChange}
-                    className="w-full bg-gradient-to-r from-[#474747] to-[#1D1D1D] rounded-[50px] pr-[70px] text-white py-5 px-8 border-none placeholder:text-gray-400"
+                    className="font-helvetica w-full bg-gradient-to-r from-[#474747] to-[#1D1D1D] rounded-[50px] pr-[70px] text-white py-5 px-8 border-none placeholder:text-gray-400"
                   />
                   <Button
                     onClick={handleEmailSubmit}
-                    className={`absolute right-[10px] top-1/2 -translate-y-1/2 ${
+                    className={`font-elemental absolute right-[10px] top-1/2 -translate-y-1/2 ${
                       isSubmitted
                         ? "bg-white text-black hover:bg-gray-100"
                         : "bg-gradient-to-r from-[#666666] to-[#1D1D1D] text-white hover:from-[#888888] hover:to-[#2D2D2D]"

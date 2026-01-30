@@ -15,17 +15,17 @@ export const Section1: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
               {/* Left column */}
               <div className="flex flex-col">
-                <h1 className="text-[20px] sm:text-[55px] text-[#4E4E4E] font-bold">
+                <h1 className="font-elemental text-[20px] sm:text-[55px] text-[#4E4E4E]">
                   sell more <br /> with SYMSPACE
                 </h1>
 
-                <p className="text-[#797979] text-[12px] sm:text-[18px] mt-2">
+                <p className="font-helvetica text-[#797979] text-[12px] sm:text-[18px] mt-2">
                   *Initial 100 Partners gain 50% more on marketplace sales
                 </p>
 
                 <div className="flex pt-[10px] mt-2">
                   <Link href="/register">
-                    <Button className="flex-1 sm:flex-none gap-1 text-white rounded-[50px] border-2 border-white py-1 sm:py-4 px-1 sm:px-8 bg-black transition-all duration-300 hover:shadow-md hover:border-white/50 hover:bg-gradient-to-br hover:from-[#18C8FF] hover:to-[#933FFE] text-[10px] sm:text-base">
+                    <Button className="font-elemental flex-1 sm:flex-none gap-1 text-white rounded-[50px] border-2 border-white py-1 sm:py-4 px-3 sm:px-12 bg-black transition-all duration-300 hover:shadow-md hover:border-white/50 hover:bg-gradient-to-br hover:from-[#18C8FF] hover:to-[#933FFE] text-[10px] sm:text-base">
                       sign up
                     </Button>
                   </Link>

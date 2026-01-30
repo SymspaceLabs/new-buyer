@@ -45,7 +45,7 @@ const SymDropdown: React.FC<SymDropdownProps> = ({
 
   return (
     <div className="flex flex-col flex-1 min-w-[100px]">
-      <Label className="text-base font-semibold text-white mb-2">
+      <Label className="text-[12px] font-elemental text-white mb-2">
         {title}
       </Label>
 

@@ -26,10 +26,10 @@ export default function Section4() {
           viewport={{ once: true }}
         >
           <div className="flex flex-col">
-            <h1 className="text-[20px] sm:text-[34px] text-center font-bold">
+            <h1 className="font-elemental text-[20px] sm:text-[34px] text-center">
               revolutionize Shopping
             </h1>
-            <h1 className="text-[20px] sm:text-[34px] text-center font-bold">
+            <h1 className="font-elemental text-[20px] sm:text-[34px] text-center">
               3d products & ar trial room
             </h1>
           </div>
@@ -54,6 +54,7 @@ export default function Section4() {
         </motion.div>
 
         {/* Section 2 */}
+        {/* Section 2 */}
         <motion.div
           variants={fadeInVariant}
           initial="hidden"
@@ -67,17 +68,19 @@ export default function Section4() {
             btnUrl="/contact-us"
             invert={true}
           >
-            <video
-              width="50%"
-              height="auto"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="/assets/videos/ar-for-business/black-t-shirt.mp4"
-              poster="/assets/videos/ar-for-business/black-t-shirt.mp4"
-              className="relative z-[2] rounded-[50px]"
-            />
+            <div className="flex justify-center w-full">
+              <video
+                width="50%"
+                height="auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+                src="/videos/sell-on-symspace/black-t-shirt.mp4"
+                poster="/videos/sell-on-symspace/black-t-shirt.mp4"
+                className="relative z-[2] rounded-[50px]"
+              />
+            </div>
           </SymSection>
         </motion.div>
 
@@ -95,17 +98,19 @@ export default function Section4() {
             btnUrl="/ar-app-simulation"
             invert={false}
           >
-            <video
-              width="40%"
-              height="auto"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="/assets/videos/ar-for-business/model.mp4"
-              poster="/assets/videos/ar-for-business/model.mp4"
-              className="relative z-[2] rounded-[50px]"
-            />
+            <div className="flex justify-center w-full">
+              <video
+                width="40%"
+                height="auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+                src="/videos/sell-on-symspace/model.mp4"
+                poster="/videos/sell-on-symspace/model.mp4"
+                className="relative z-[2] rounded-[50px]"
+              />
+            </div>
           </SymSection>
         </motion.div>
 
@@ -123,17 +128,19 @@ export default function Section4() {
             btnUrl="/"
             invert={true}
           >
-            <video
-              width="50%"
-              height="auto"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="/assets/videos/ar-for-business/black-t-shirt.mp4"
-              poster="/assets/videos/ar-for-business/black-t-shirt.mp4"
-              className="relative z-[2] rounded-[50px]"
-            />
+            <div className="flex justify-center w-full">
+              <video
+                width="50%"
+                height="auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+                src="/videos/sell-on-symspace/black-t-shirt.mp4"
+                poster="/videos/sell-on-symspace/black-t-shirt.mp4"
+                className="relative z-[2] rounded-[50px]"
+              />
+            </div>
           </SymSection>
         </motion.div>
       </div>

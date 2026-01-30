@@ -17,7 +17,7 @@ export default function Section6() {
         >
           <div className="flex flex-col items-center py-2 sm:py-5 px-2 gap-4">
             {/* Header */}
-            <h1 className="text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
+            <h1 className="font-elemental text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
               Stage faster. Lease Smarter.
             </h1>
 

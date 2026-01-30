@@ -7,6 +7,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, MapPin, ArrowRight } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 
 // ==============================================================
 
@@ -85,19 +86,19 @@ export default function Section3() {
     <div id="open-roles" className="py-2 sm:py-10">
       <div className="relative flex flex-col items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} justify-between w-full py-5 gap-2`}>
-          <h1 className="text-[25px] sm:text-[35px] text-white">
+          <h1 className="font-elemental text-[25px] sm:text-[35px] text-white">
             open roles
           </h1>
           <div className={`flex gap-2 ${isMobile ? 'flex-col' : 'flex-row'}`}>
             {/* Search Input */}
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-black w-5 h-5" />
-              <input
+              <Input
                 type="text"
                 placeholder="Job title, skill, keyword"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full sm:w-auto pl-12 pr-4 py-3 rounded-[25px] bg-white text-black outline-none"
+                className="font-helvetica w-full sm:w-auto pl-12 pr-4 py-3 rounded-[25px] bg-white text-black outline-none"
               />
             </div>
 
@@ -126,7 +127,7 @@ export default function Section3() {
                       onChange={() => {}}
                       className="mr-3"
                     />
-                    <span className="lowercase">All Locations</span>
+                    <span>All Locations</span>
                   </div>
                   {allLocations.map((location, index) => (
                     <div
@@ -182,7 +183,7 @@ const JobCard = ({ job }: JobCardProps) => {
         {job.location}
       </p>
       <div className="border-t border-white/30 my-2"></div>
-      <h2 className="text-white text-lg py-2 flex-grow">
+      <h2 className="font-elemental lowercase text-white text-lg py-2 flex-grow">
         {job.title}
       </h2>
       <div className="flex justify-end">

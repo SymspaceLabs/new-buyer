@@ -52,7 +52,7 @@ const SymTextField: React.FC<SymTextFieldProps> = ({
   const currentLength = value?.length || 0;
   const isLight = theme === 'light';
 
-  const inputClasses = `
+  const inputClasses = `py-3 font-helvetica
     ${isLight ? 'bg-transparent text-black border-gray-300' : 'bg-black text-white border-gray-700'}
     ${error ? 'border-red-500 focus-visible:ring-red-500' : ''}
     rounded-md

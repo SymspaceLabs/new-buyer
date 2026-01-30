@@ -23,7 +23,7 @@ const BoxLink: React.FC<BoxLinkProps> = ({
     <Link
       href={href}
       className={cn(
-        'inline-block border-b border-white',
+        'inline-block border-b border-white font-helvetica',
         className
       )}
       style={{

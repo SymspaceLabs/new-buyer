@@ -51,16 +51,16 @@ function PlanCard({ plan, theme = "light" }: PlanCardProps) {
   const isDark = theme === "dark";
 
   return (
-    <div className="relative">
+    <div className="relative font-helvetica">
       {/* Popular Badge */}
       {plan.isPopular && (
         <div className="z-[3] flex gap-1 items-center justify-center bg-[#2563EB] text-white p-[10px] text-center font-bold text-base absolute top-0 -mt-5 w-full rounded-t-[25px]">
           Most Popular
           <div>
             <Image
-              src="/assets/images/sparkles.png"
-              width={50}
-              height={50}
+              src="/images/sparkler-white.webp"
+              width={20}
+              height={20}
               alt="sparkles"
             />
           </div>
@@ -77,8 +77,8 @@ function PlanCard({ plan, theme = "light" }: PlanCardProps) {
             "inset 0px 3.00856px 6.01712px rgba(255, 255, 255, 0.4), inset 0px -3.00856px 9.02569px rgba(255, 255, 255, 0.5), inset 0px -1.50428px 20.0571px rgba(255, 255, 255, 0.24), inset 0px 20.0571px 20.0571px rgba(255, 255, 255, 0.24), inset 0px 1.00285px 20.5585px rgba(255, 255, 255, 0.8)",
         }}
       >
-        <div className="relative p-4">
-          <h1 className={`text-xl font-bold ${isDark ? "text-white" : "text-black"}`}>
+        <div className="relative px-4 pb-4 pt-8">
+          <h1 className={`font-elemental lowercase text-xl ${isDark ? "text-white" : "text-black"}`}>
             {plan.title}
           </h1>
           <p className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
@@ -104,7 +104,7 @@ function PlanCard({ plan, theme = "light" }: PlanCardProps) {
           </div>
 
           <Link href="/register" passHref>
-            <Button className="w-full mt-4 bg-gradient-to-r from-[#18C8FF] to-[#933FFE] text-white rounded-[50px] py-6 hover:opacity-90 transition-opacity">
+            <Button className="font-elemental w-full mt-4 bg-[#2563EB] text-white rounded-[50px] py-4 border-2 border-white shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] transition-all">
               Get Started
             </Button>
           </Link>
@@ -149,11 +149,10 @@ function PlanToggle({
   };
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-2 font-helvetica">
       {/* LEFT */}
       <h1
-        className="text-white text-[12px] sm:text-[18px] text-center sm:text-left font-bold"
-        style={{ wordSpacing: "5em" }}
+        className="font-elemental text-white text-[12px] sm:text-[18px] text-center sm:text-left"
       >
         {title}
       </h1>
@@ -162,7 +161,7 @@ function PlanToggle({
       <div className="flex flex-col-reverse sm:flex-row justify-center sm:justify-end items-center gap-2">
         {/* Subtitle */}
         <p
-          className={`text-center mt-[10px] sm:mt-0 ${
+          className={`text-center mt-[10px] sm:mt-0  ${
             isDark ? "text-white" : "text-[#2563EB]"
           }`}
         >

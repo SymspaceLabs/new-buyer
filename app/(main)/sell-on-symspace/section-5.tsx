@@ -14,10 +14,10 @@ export default function Section5() {
         <div className="flex flex-col justify-between items-center pb-2 sm:pb-10">
           {/* Main Header */}
           <div className="text-center">
-            <h1 className="text-[20px] sm:text-[28px] font-bold" style={{ wordSpacing: '5px' }}>
+            <h1 className="font-elemental text-[20px] sm:text-[28px]" style={{ wordSpacing: '5px' }}>
               revolutionize shopping. <br /> simplify and save.
             </h1>
-            <p className="text-[#18181B] text-[14px] sm:text-base py-2">
+            <p className="font-helvetica text-[#18181B] text-[14px] sm:text-base py-2">
               Choose the perfect plan for your business needs
             </p>
           </div>

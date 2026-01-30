@@ -97,12 +97,12 @@ function BlogCard({ title, subTitle }: BlogCardProps) {
       className="p-5 flex flex-row sm:flex-col items-center justify-center sm:h-[400px] bg-gradient-to-br from-white/50 via-[rgba(235,235,235,0.367)] to-[rgba(196,196,196,0.1)] shadow-[0px_1px_24px_-1px_rgba(0,0,0,0.18)] backdrop-blur-[10px] rounded-[30px] gap-3"
     >
       {/* Title */}
-      <h1 className="text-[30px] sm:text-[96px] text-white text-center font-bold">
+      <h1 className="font-elemental text-[30px] sm:text-[96px] text-white text-center">
         {count}%
       </h1>
 
       {/* Subtitle */}
-      <p className="text-sm sm:text-2xl text-white text-center">
+      <p className="font-helvetica text-sm sm:text-2xl text-white text-center">
         {subTitle}
       </p>
     </div>

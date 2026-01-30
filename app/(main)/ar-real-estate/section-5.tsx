@@ -20,15 +20,15 @@ const customStyles = {
 const benefits = [
   { 
     title: 'place real furniture with ar',
-    imgUrl: '/assets/images/staging/furnish-home-1.png',
+    imgUrl: '/images/ar-real-estate/furnish-home-1.png',
   },
   { 
     title: 'view product dimensions in real-time',
-    imgUrl: '/assets/images/staging/furnish-home-2.png',
+    imgUrl: '/images/ar-real-estate/furnish-home-2.png',
   },
   { 
     title: 'seamless checkout & ordering',
-    imgUrl: '/assets/images/staging/furnish-home-3.png',
+    imgUrl: '/images/ar-real-estate/furnish-home-3.png',
   }
 ];
 
@@ -50,7 +50,7 @@ export default function Section5() {
       >
         <div className="flex flex-col items-center py-2 sm:py-5 px-2 gap-4">
           {/* Header */}
-          <h1 className="text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
+          <h1 className="font-elemental text-white text-[20px] sm:text-[40px] max-w-[1000px] text-center" style={{ wordSpacing: '10px' }}>
             furnish Homes with augmented reality
           </h1>
 
@@ -63,7 +63,7 @@ export default function Section5() {
                 style={customStyles.textBubbleBoxShadow}
                 onMouseEnter={() => handleBenefitChange(benefit)}
               >
-                <h1 className="text-[8px] sm:text-[14px] text-white">
+                <h1 className="font-elemental text-[8px] sm:text-[14px] text-white">
                   {benefit.title}
                 </h1>
               </div>

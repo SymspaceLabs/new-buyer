@@ -23,7 +23,7 @@ const SymButton: React.FC<SymButtonProps> = ({
       onClick={onClick}
       disabled={loading}
       className={cn(
-        'min-h-[58px] flex items-center justify-center',
+        'font-elemental min-h-[58px] flex items-center justify-center',
         fullWidth && 'w-full',
         className
       )}

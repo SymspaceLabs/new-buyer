@@ -32,7 +32,7 @@ export default function Section2() {
   return (
     <div className="w-full flex flex-col items-center py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="w-full">
-        <h1 className="py-5 text-[25px] sm:text-[40px] text-white">
+        <h1 className="font-elemental py-5 text-[25px] sm:text-[40px] text-white">
           Our Core Values
         </h1>
         <div className="w-full">
@@ -41,10 +41,10 @@ export default function Section2() {
             <tbody>
               {rows.map((row, index) => (
                 <tr key={index} className="border-b border-gray-700">
-                  <td className="p-1 sm:p-4 font-[ElementalEnd] text-[15px] sm:text-[30px] text-white align-top">
+                  <td className="font-elemental p-1 sm:p-4 text-[15px] sm:text-[30px] text-white align-top">
                     {row.title}
                   </td>
-                  <td className="p-1 sm:p-4 font-[Helvetica] text-white font-light text-[8px] sm:text-[20px] text-justify">
+                  <td className="p-1 sm:p-4 font-helvetica text-white font-light text-[8px] sm:text-[20px] text-justify">
                     {row.description}
                   </td>
                 </tr>
