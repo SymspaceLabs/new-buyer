@@ -25,16 +25,16 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({
   setMessage,
   formSubmitted,
 }) => {
-  const handleFullNameChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  const handleFullNameChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
     setFullName(event.target.value);
   
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
     setEmail(event.target.value);
   
   const handleTopicChange = (event: { target: { value: string } }) => 
     setTopic(event.target.value);
   
-  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => 
+  const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
     setMessage(event.target.value);
 
   // Helper function to determine if an error should be shown for a field
