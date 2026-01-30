@@ -6,10 +6,10 @@
 "use client";
 
 interface BlobBoxProps {
-  top?: string | null;
-  right?: string | null;
-  bottom?: string | null;
-  left?: string | null;
+  top?: string | number | null;
+  right?: string | number | null;
+  bottom?: string | number | null;
+  left?: string | number | null;
   background?: string;
   displayNoneMobile?: boolean;
   widthHeight?: string;
@@ -24,14 +24,21 @@ export const BlobBox = ({
   displayNoneMobile = false,
   widthHeight = '500px',
 }: BlobBoxProps) => {
+  // Helper function to convert number to px string
+  const formatPosition = (value: string | number | null) => {
+    if (value === null) return undefined;
+    if (typeof value === 'number') return `${value}px`;
+    return value;
+  };
+
   return (
     <div
       className={`${displayNoneMobile ? 'hidden sm:block' : 'block'} absolute rounded-full filter blur-[75px] opacity-50 animate-blob`}
       style={{
-        top: top ?? undefined,
-        right: right ?? undefined,
-        bottom: bottom ?? undefined,
-        left: left ?? undefined,
+        top: formatPosition(top),
+        right: formatPosition(right),
+        bottom: formatPosition(bottom),
+        left: formatPosition(left),
         width: widthHeight,
         height: widthHeight,
         background,
@@ -39,17 +46,3 @@ export const BlobBox = ({
     />
   );
 };
-
-// Tailwind animation in globals.css or tailwind.config.js
-/*
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-*/
