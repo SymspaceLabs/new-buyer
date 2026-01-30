@@ -38,7 +38,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
   errors,
   isFormSubmitted
 }) => {
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newPassword = e.target.value;
     setPassword(newPassword);
 
@@ -49,7 +49,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
     }
   };
 
-  const handleRetypePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleRetypePasswordChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newRetypePassword = e.target.value;
     setRetypePassword(newRetypePassword);
 
@@ -69,7 +69,8 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
         placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
         type="email"
-        error={errors.email}
+        error={!!errors.email}
+        helperText={errors.email}
       />
 
       {/* FIRST NAME & LAST NAME - Responsive: column on mobile, row on tablet+ */}
@@ -79,14 +80,16 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
           value={firstName}
           placeholder="First Name"
           onChange={(e) => setFirstName(e.target.value)}
-          error={errors.firstName}
+          error={!!errors.firstName}
+          helperText={errors.firstName}
         />
         <SymTextField
           title="Last Name"
           value={lastName}
           placeholder="Last Name"
           onChange={(e) => setLastName(e.target.value)}
-          error={errors.lastName}
+          error={!!errors.lastName}
+          helperText={errors.lastName}
         />
       </div>
 
