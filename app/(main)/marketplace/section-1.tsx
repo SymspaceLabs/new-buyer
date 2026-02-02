@@ -27,10 +27,10 @@ export default function Section1() {
           >
             <div className="h-full bg-[#353535] text-white rounded-[40px] overflow-hidden flex flex-col">
               <div className="p-8 pb-0">
-                <p className="text-base mb-2">
+                <p className="font-helvetica text-base mb-2">
                   Enhance your everyday life
                 </p>
-                <h2 className="text-2xl md:text-[26px] leading-tight mb-4">
+                <h2 className="font-helvetica font-bold text-2xl md:text-[26px] leading-tight mb-4">
                   AR Shopping for
                   <br />
                   Homebound Convenience
@@ -38,7 +38,7 @@ export default function Section1() {
                 <Link href="/products">
                   <Button 
                     variant="ghost"
-                    className="rounded-[32px] px-6 py-2 bg-white/10 text-white text-xs hover:bg-gradient-to-r hover:from-white hover:to-[#AEAEAE] hover:text-black hover:shadow-md transition-all"
+                    className="font-elemental lowercase rounded-[32px] px-6 py-2 bg-white/10 text-white text-xs hover:bg-gradient-to-r hover:from-white hover:to-[#AEAEAE] hover:text-black hover:shadow-md transition-all"
                   >
                     Shop By Category
                   </Button>
@@ -75,10 +75,10 @@ export default function Section1() {
               />
               <div className="px-8 py-4">
                 {/* Card Content */}
-                <p className="text-base text-[#353535] mb-2">
+                <p className="font-helvetica text-base text-[#353535] mb-2">
                   Shop like never before
                 </p>
-                <h2 className="text-2xl md:text-[26px] leading-tight text-[#353535] mb-4">
+                <h2 className="font-helvetica font-bold text-2xl md:text-[26px] leading-tight text-[#353535] mb-4">
                   Augment Realistic 3D
                   <br />
                   Products
@@ -86,7 +86,7 @@ export default function Section1() {
                 <Link href="/ar-app-simulation">
                   <Button 
                     variant="outline"
-                    className="rounded-[32px] px-6 py-2 bg-white text-black border-2 border-white text-xs hover:bg-gradient-to-r hover:from-[#666666] hover:to-black hover:text-white hover:shadow-md transition-all"
+                    className="font-elemental lowercase rounded-[32px] px-6 py-2 bg-white text-black border-2 border-white text-xs hover:bg-gradient-to-r hover:from-[#666666] hover:to-black hover:text-white hover:shadow-md transition-all"
                   >
                     Download The App
                   </Button>
@@ -108,17 +108,17 @@ export default function Section1() {
             <div className="h-full bg-[#353535] text-white rounded-[40px] overflow-hidden flex flex-col">
               <div className="p-8 pb-0 xl:pb-12 lg:pb-10 md:pb-6">
                 {/* Card Content */}
-                <p className="text-base mb-2">
+                <p className="font-helvetica text-base mb-2">
                   Pioneering AR Commerce
                 </p>
-                <h2 className="text-2xl md:text-[26px] leading-tight mb-4">
+                <h2 className="font-helvetica font-bold text-2xl md:text-[26px] leading-tight mb-4">
                   Positive Impacts of Mixed
                   <br /> Reality Commerce
                 </h2>
                 <Link href="/global-impact">
                   <Button 
                     variant="ghost"
-                    className="rounded-[32px] px-6 py-2 bg-white/10 text-white text-xs hover:bg-gradient-to-r hover:from-white hover:to-[#AEAEAE] hover:text-black hover:shadow-md transition-all"
+                    className="font-elemental lowercase rounded-[32px] px-6 py-2 bg-white/10 text-white text-xs hover:bg-gradient-to-r hover:from-white hover:to-[#AEAEAE] hover:text-black hover:shadow-md transition-all"
                   >
                     Learn More
                   </Button>

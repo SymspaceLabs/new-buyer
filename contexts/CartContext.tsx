@@ -50,8 +50,6 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 // ============================================================================
 
 const reducer = (state: CartState, action: CartAction): CartState => {
-  console.log('🛒 Cart action:', action.type, action.payload);
-
   switch (action.type) {
     case "ADD_TO_CART": {
       const { variantId, quantity = 1 } = action.payload;
@@ -68,14 +66,12 @@ const reducer = (state: CartState, action: CartAction): CartState => {
 
       if (existingIndex >= 0) {
         // Update quantity
-        console.log('📦 Updating existing item quantity');
         cartList[existingIndex] = {
           ...cartList[existingIndex],
           quantity: cartList[existingIndex].quantity + quantity,
         };
       } else {
         // Add new item
-        console.log('✨ Adding new item to cart');
         cartList.push({
           variantId,
           quantity,
@@ -83,7 +79,6 @@ const reducer = (state: CartState, action: CartAction): CartState => {
         });
       }
 
-      console.log('🛒 New cart:', cartList);
       return { ...state, cart: cartList };
     }
 
@@ -91,14 +86,12 @@ const reducer = (state: CartState, action: CartAction): CartState => {
       const { variantId, quantity } = action.payload;
 
       if (quantity < 1) {
-        console.log('🗑️ Removing item (quantity < 1)');
         return {
           ...state,
           cart: state.cart.filter(item => item.variantId !== variantId),
         };
       }
 
-      console.log('🔄 Updating quantity to:', quantity);
       return {
         ...state,
         cart: state.cart.map(item =>
@@ -109,7 +102,6 @@ const reducer = (state: CartState, action: CartAction): CartState => {
 
     case "REMOVE_FROM_CART": {
       const { variantId } = action.payload;
-      console.log('❌ Removing item:', variantId);
 
       return {
         ...state,
@@ -118,7 +110,6 @@ const reducer = (state: CartState, action: CartAction): CartState => {
     }
 
     case "INITIALIZE_CART": {
-      console.log('🔧 Initializing cart:', action.payload);
       return {
         ...state,
         cart: action.payload,
@@ -126,7 +117,6 @@ const reducer = (state: CartState, action: CartAction): CartState => {
     }
 
     case "CLEAR_CART": {
-      console.log('🧹 Clearing cart');
       return {
         ...state,
         cart: [],
@@ -158,7 +148,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     if (storedCart) {
       try {
         const parsed: CartItem[] = JSON.parse(storedCart);
-        console.log('📥 Loading cart from localStorage:', parsed);
         dispatch({
           type: "INITIALIZE_CART",
           payload: parsed,
@@ -173,7 +162,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   useEffect(() => {
     if (typeof window === "undefined") return;
     
-    console.log('💾 Saving cart to localStorage:', state.cart);
     localStorage.setItem("cart_v2", JSON.stringify(state.cart));
   }, [state.cart]);
 

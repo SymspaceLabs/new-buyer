@@ -109,7 +109,7 @@ export default function Section6() {
           >
             {/* Section title */}
             <div className="flex items-center gap-2">
-              <h1 className="text-[24px] sm:text-[35px] text-white [word-spacing:10px]">
+              <h1 className="font-elemental text-[24px] sm:text-[35px] text-white [word-spacing:10px]">
                 open roles
               </h1>
               <Button
@@ -187,11 +187,11 @@ const JobCard = ({ job }: JobCardProps) => {
                  hover:shadow-[0px_4px_10px_rgba(0,0,0,0.25)] hover:scale-[1.02]"
     >
       <div>
-        <p className="uppercase text-white font-light text-[16px] py-1">
+        <p className="font-helvetica uppercase text-white font-light text-[16px] py-1">
           {job.location}
         </p>
         <div className="border-t border-white/30 my-2"></div>
-        <h2 className="text-white text-[18px] font-normal py-2">
+        <h2 className="font-elemental lowercase text-white text-[18px] font-normal py-2">
           {job.title}
         </h2>
       </div>

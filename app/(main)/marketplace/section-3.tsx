@@ -21,7 +21,7 @@ export default function Section3() {
   return (
     <div className="py-4 sm:py-10 px-4 sm:px-0">
       <div className="container mx-auto rounded-[30px] sm:rounded-[50px] py-2 bg-[#E0F0FD]">
-        <h1 className="text-xl sm:text-3xl py-3 text-black text-center font-bold">
+        <h1 className="font-elemental text-xl sm:text-3xl py-3 text-black text-center">
           Shop Women
         </h1>
 
@@ -46,7 +46,7 @@ export default function Section3() {
         <div className="flex justify-end mt-5">
           <Button
             asChild
-            className="bg-white/90 text-black hover:bg-white border border-white/50 shadow-lg backdrop-blur-sm rounded-full px-8 py-2"
+            className="font-elemental lowercase bg-white/90 text-black hover:bg-white border border-white/50 shadow-lg backdrop-blur-sm rounded-full px-8 py-2"
           >
             <Link href="/products">Shop By Category</Link>
           </Button>
@@ -70,7 +70,7 @@ function ProductCard4({ item, textColor = "#000" }: ProductCard4Props) {
       <div className="group rounded-[25px] sm:rounded-[25px] md:rounded-[80px] pt-2 sm:pt-2 md:pt-5 px-1 sm:px-1 md:px-5 bg-white/40 shadow-[inset_0px_3px_6px_rgba(255,255,255,0.4),inset_0px_-3px_9px_rgba(255,255,255,0.5),inset_0px_-1.5px_20px_rgba(255,255,255,0.24),inset_0px_20px_20px_rgba(255,255,255,0.24),inset_0px_1px_20.5px_rgba(255,255,255,0.8)] backdrop-blur-[10px] relative overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)]">
         <div className="relative z-10 text-center">
           <h2
-            className="text-[8px] sm:text-[8px] md:text-[21px] font-bold"
+            className="font-elemental lowercase text-[8px] sm:text-[8px] md:text-[21px]"
             style={{ color: textColor }}
           >
             {item.title}

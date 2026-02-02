@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Carousel } from "@/components/carousel";
+import { getAllBlogs } from "@/api/blog";
 
 interface Blog {
   slug: string;
@@ -34,23 +35,22 @@ export default function Section2() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const getAllBlogs = async () => {
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-      setBlogs(data);
-    } catch (error) {
-      console.error("Error during fetching blogs:", error);
-    }
-  };
-
   useEffect(() => {
-    getAllBlogs();
+    const fetchBlogs = async () => {
+      console.log("1. Fetching started...");
+      const data = await getAllBlogs();
+      console.log("2. Data received:", data);
+
+      if (data) {
+        const blogsToSet = data.blogs || data; // Handles both {blogs:[]} and []
+        console.log("3. Setting blogs to state:", blogsToSet);
+        setBlogs(blogsToSet);
+      } else {
+        console.error("4. No data returned from API");
+      }
+    };
+
+    fetchBlogs();
   }, []);
 
   // Helper function to truncate title
@@ -70,7 +70,7 @@ export default function Section2() {
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] as const }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1 className="text-center text-black text-xl sm:text-3xl font-bold pb-10">
+          <h1 className="font-elemental text-center text-black text-xl sm:text-3xl pb-10">
             Trending News
           </h1>
 
@@ -100,7 +100,7 @@ export default function Section2() {
                             variant="ghost"
                             className="w-full text-white bg-gradient-to-t from-black/80 to-transparent border border-white/30 backdrop-blur-sm rounded-[37px] p-0 hover:bg-gradient-to-t hover:from-black/90"
                           >
-                            <h1 className="text-[10px] line-clamp-2 max-w-[90%] py-3 px-4">
+                            <h1 className="font-elemental text-[10px] line-clamp-2 max-w-[90%] py-3 px-4">
                               {truncateTitle(item.title)}
                             </h1>
                           </Button>
@@ -141,7 +141,7 @@ export default function Section2() {
                           />
                         </div>
                         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-center">
-                          <div className="text-white bg-white/[0.01] border border-white/30 backdrop-blur-sm rounded-[37px] px-6 py-2 hover:bg-white/10 transition-colors">
+                          <div className="min-w-[350px] font-elemental lowercase text-[14px] text-white bg-white/[0.01] border border-white/30 backdrop-blur-sm rounded-[37px] px-6 py-2 hover:bg-white/10 transition-colors ">
                             {truncateTitle(item.title)}
                           </div>
                         </div>

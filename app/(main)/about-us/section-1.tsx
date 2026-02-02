@@ -27,7 +27,7 @@ export default function Section1() {
   return (
     <div className="w-full flex flex-col items-center py-9 pt-[100px] md:pt-[200px] px-4">
       <div className="flex flex-col w-full max-w-[1400px]">
-        <h1 className="text-[25px] sm:text-[45px] text-white pb-3 [word-spacing:10px]">
+        <h1 className="font-elemental text-[25px] sm:text-[45px] text-white pb-3 [word-spacing:10px]">
           simulating reality with technology that brings spaces to life
         </h1>
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mt-0 sm:-mt-6">
@@ -42,7 +42,7 @@ export default function Section1() {
               alt="furniture shop"
               width={500}
               height={500}
-              src="/assets/images/about-us/hero.png"
+              src="/images/about-us/hero.png"
               className="w-full h-auto"
             />
           </div>
@@ -72,10 +72,10 @@ const GlassCard = ({ content, url }: GlassCardProps) => {
 
   return (
     <div
-      className="flex justify-between items-center gap-3 p-2 cursor-pointer rounded-[80px] 
-                 bg-white/35 backdrop-blur-[10px] 
+      className="font-elemental lowercase flex justify-between items-center gap-3 p-2 cursor-pointer rounded-[80px] 
+                 bg-white/35 backdrop-blur-[10px]
                  shadow-[inset_0px_3px_6px_rgba(255,255,255,0.4),inset_0px_-3px_9px_rgba(255,255,255,0.5),inset_0px_-1.5px_20px_rgba(255,255,255,0.24),inset_0px_20px_20px_rgba(255,255,255,0.24),inset_0px_1px_20.5px_rgba(255,255,255,0.8)]
-                 transition-all duration-200 ease-in-out
+                 transition-all duration-200 ease-in-out p-4
                  hover:bg-[rgba(122,169,243,0.7)] hover:shadow-[0px_4px_10px_rgba(0,0,0,0.25)]"
       onClick={handleClick}
       role="button"

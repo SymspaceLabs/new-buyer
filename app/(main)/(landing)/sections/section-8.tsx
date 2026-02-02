@@ -96,12 +96,12 @@ const styles = {
   // Typography
   title1: "self-stretch text-black text-[15px] sm:text-[24px] font-elemental lowercase",
   title2: "self-stretch text-[8.5px] sm:text-lg leading-[1.5] min-h-[26px] break-words font-elemental lowercase",
-  description1: "self-stretch text-[#909090] text-xs sm:text-base font-bold leading-none sm:leading-[1.5] break-words max-w-[500px]",
-  description2: "self-stretch text-[#909090] text-xs sm:text-[15px] font-bold leading-none sm:leading-[1.5] break-words max-w-[200px] min-h-[26px]",
-  description3: "self-stretch text-[#909090] text-xs sm:text-base font-bold leading-[1.5] sm:leading-[2] break-words max-w-[330px] text-justify",
+  description1: "font-helvetica self-stretch text-[#909090] text-xs sm:text-base font-bold leading-none sm:leading-[1.5] break-words max-w-[500px]",
+  description2: "font-helvetica self-stretch text-[#909090] text-xs sm:text-[15px] font-bold leading-none sm:leading-[1.5] break-words max-w-[200px] min-h-[26px]",
+  description3: "font-helvetica self-stretch text-[#909090] text-xs sm:text-base font-bold leading-[1.5] sm:leading-[2] break-words max-w-[330px] text-justify",
   
   // Button
-  button: `
+  button: ` font-elemental
     inline-flex py-2 sm:py-4 px-2 sm:px-4 max-h-[30px] sm:max-h-none
     rounded-[50px] justify-center items-center text-center
     text-[10px] sm:text-base font-medium
@@ -229,7 +229,7 @@ const Card3 = memo(() => (
     <div className={styles.card3Inner}>
       <div className={styles.card3Content}>
         <div className="self-stretch flex flex-col justify-start items-start gap-4">
-          <h3 className="self-stretch text-black text-[15px] sm:text-[25px] font-bold leading-none">
+          <h3 className="font-elemental self-stretch text-black text-[15px] sm:text-[25px] leading-none">
             {CARDS_CONTENT.card3.title}
           </h3>
           <p className={styles.description3}>

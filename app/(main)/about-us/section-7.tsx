@@ -92,7 +92,7 @@ export default function Section7() {
           >
             {/* Section title */}
             <div className="flex items-center gap-2">
-              <h1 className="text-[24px] sm:text-[35px] text-white [word-spacing:10px]">
+              <h1 className="font-elemental text-[24px] sm:text-[35px] text-white [word-spacing:10px]">
                 press releases
               </h1>
               <Button
@@ -179,13 +179,13 @@ const BlogCard = ({ blog }: BlogCardProps) => {
         />
       </div>
 
-      <p className="text-white text-[16px] py-1 font-light">
+      <p className="font-helvetica text-white text-[16px] py-1 font-light">
         {blog.handle_url_title}
       </p>
       
       <div className="border-t border-white/30"></div>
       
-      <p className="text-white text-[18px] py-2 font-normal">
+      <p className="font-helvetica text-white text-[18px] py-2 font-normal">
         {blog.title}
       </p>
     </div>

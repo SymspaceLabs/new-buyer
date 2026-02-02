@@ -89,10 +89,10 @@ export default function Section5() {
       {/* Header */}
       <div className="flex items-center justify-center mt-10 mb-6 sm:mb-10">
         <div className="text-center">
-          <h1 className="text-2xl sm:text-4xl font-bold text-black mb-2">
+          <h1 className="text-2xl sm:text-4xl font-elemental lowercase text-black mb-2">
             Best Seller products
           </h1>
-          <p className="text-sm sm:text-base text-gray-600">
+          <p className="font-helvetica text-sm sm:text-base text-gray-600">
             Augmented Reality features available in the Symspace app
           </p>
         </div>
@@ -204,7 +204,7 @@ function ProductCard1({ product }: ProductCard1Props) {
           />
         </div>
 
-        <div className="px-3 sm:px-8 py-8 flex-grow">
+        <div className="font-helvetica px-3 sm:px-8 py-8 flex-grow">
           <p className="text-white text-[10px] sm:text-lg font-medium whitespace-nowrap overflow-hidden text-ellipsis">
             {product.name}
           </p>

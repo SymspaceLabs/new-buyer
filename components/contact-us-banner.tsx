@@ -34,23 +34,23 @@ export default function ContactUsBanner({ title, subtitle }: ContactUsBannerProp
             <Image
               src="/images/banners/banner-55.png"
               alt="offer"
-              width={500}
-              height={500}
+              fill
+              sizes="100%"
               className="object-cover"
             />
             
             <div className="absolute left-[10%] top-[40%] -translate-y-[40%] max-sm:inset-x-0 max-sm:top-1/2 max-sm:-translate-y-1/2 max-sm:px-8">
-              <h1 className="mb-2 text-xl leading-tight sm:mt-3 sm:text-4xl max-[375px]:mt-0 max-[375px]:text-2xl">
+              <h1 className="font-elemental mb-2 text-xl leading-tight sm:mt-3 sm:text-4xl max-[375px]:mt-0 max-[375px]:text-2xl">
                 {title}
               </h1>
 
-              <p className="mb-6 text-sm leading-tight sm:text-lg">
+              <p className="font-helvetica mb-6 text-sm leading-tight sm:text-lg">
                 {subtitle}
               </p>
 
               <Link href="/contact-us" passHref>
                 <Button
-                  className="rounded-full border-2 border-white bg-black px-4 py-2 text-white shadow-[0px_4px_4px_3px_rgba(0,0,0,0.25)] hover:bg-gradient-to-r hover:from-[#3084FF] hover:to-[#1D4F99] sm:px-6 sm:py-4"
+                  className="font-elemental rounded-full border-2 border-white bg-black px-4 py-2 text-white shadow-[0px_4px_4px_3px_rgba(0,0,0,0.25)] hover:bg-gradient-to-r hover:from-[#3084FF] hover:to-[#1D4F99] sm:px-6 sm:py-4"
                 >
                   Contact Us
                 </Button>

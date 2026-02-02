@@ -77,7 +77,7 @@ export default function Section6() {
             }}
           >
             {/* Content area for text and call-to-action button */}
-            <div className="flex flex-col gap-4 relative z-10">
+            <div className="flex flex-col gap-4 relative z-10 font-helvetica ">
               {/* Section headline */}
               <p className="font-bold text-[20px] sm:text-[48px] text-white leading-tight">
                 Augment Products whenever.
@@ -96,7 +96,7 @@ export default function Section6() {
                   onClick={handleBetaAccessClick}
                   className="flex items-center gap-4 text-white rounded-[50px] py-4 px-4 bg-gradient-to-br from-[#18C8FF] via-[#5B7BFF] to-[#933FFE] max-w-full sm:max-w-[250px] hover:opacity-90 transition-opacity"
                 >
-                  <span className="text-xs font-bold">Beta Access</span>
+                  <span className="text-xs font-elemental lowercase">Beta Access</span>
                   <div className="w-[35px] flex flex-col items-center justify-center">
                     <Image
                       alt="sparkler"
@@ -124,13 +124,13 @@ export default function Section6() {
                         }
                         value={email}
                         onChange={handleEmailChange}
-                        className={`w-full bg-gradient-to-r from-[#474747] to-[#1D1D1D] rounded-[50px] pr-[90px] text-white placeholder:text-gray-400 border-none focus-visible:ring-0 focus-visible:ring-offset-0 py-5 px-8 ${
+                        className={`font-helvetica w-full bg-gradient-to-r from-[#474747] to-[#1D1D1D] rounded-[50px] pr-[90px] text-white placeholder:text-gray-400 border-none focus-visible:ring-0 focus-visible:ring-offset-0 py-5 px-8 ${
                           error ? "border-red-500" : ""
                         }`}
                       />
                       <Button
                         onClick={handleEmailSubmit}
-                        className={`absolute right-[10px] top-1/2 -translate-y-1/2 rounded-[50px] px-6 py-2 border border-white transition-all ${
+                        className={`font-elemental lowercase absolute right-[10px] top-1/2 -translate-y-1/2 rounded-[50px] px-6 py-2 border border-white transition-all ${
                           isSubmitted
                             ? "bg-white text-black hover:bg-gray-100"
                             : "bg-gradient-to-r from-[#666666] to-[#1D1D1D] text-white hover:from-[#888888] hover:to-[#2D2D2D]"

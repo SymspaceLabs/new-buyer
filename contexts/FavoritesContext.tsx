@@ -28,8 +28,6 @@ const createFavoriteKey = (productId: string, colorCode?: string, sizeId?: strin
 };
 
 const reducer = (state: FavoritesState, action: FavoritesAction): FavoritesState => {
-    console.log('🔧 Reducer action:', action.type, action.payload);
-
   switch (action.type) {
     case "TOGGLE_FAVORITE": {
       const key = createFavoriteKey(
@@ -37,8 +35,6 @@ const reducer = (state: FavoritesState, action: FavoritesAction): FavoritesState
         action.payload.selectedColor?.value,
         action.payload.selectedSize ?? undefined
       );
-      console.log('🔑 Created key:', key);
-      console.log('📋 Current favorites:', state.favoriteIds);
       
       const exists = state.favoriteIds.includes(key);
       
@@ -67,8 +63,6 @@ const reducer = (state: FavoritesState, action: FavoritesAction): FavoritesState
     }
 
     case "REMOVE_FAVORITE": {
-      console.log('❌ Removing key:', action.payload);
-      console.log('📋 Before removal:', state.favoriteIds);
       const removeKey = action.payload;
       const updatedData = { ...state.favoriteData };
       delete updatedData[removeKey];

@@ -46,7 +46,7 @@ export default function Section4() {
   return (
     <div className="w-full flex flex-col items-center py-0 sm:py-10 px-4">
       <div className="w-full max-w-[1400px]">
-        <h1 className="py-5 text-[25px] sm:text-[40px] text-white">
+        <h1 className="font-elemental py-5 text-[25px] sm:text-[40px] text-white">
           Our Core Values
         </h1>
         <div className="w-full">
@@ -56,14 +56,14 @@ export default function Section4() {
                 {rows.map((row, index) => (
                   <TableRow 
                     key={index}
-                    className="border-b border-white/20 hover:bg-white/5 transition-colors"
+                    className="border-b border-white/20 hover:bg-white/5 transition-colors py-4"
                   >
-                    <TableCell className="p-1 sm:p-4 align-top">
-                      <h2 className="text-[10px] sm:text-[30px] text-white font-normal">
+                    <TableCell className="p-1 sm:p-4 align-top py-4">
+                      <h2 className="font-elemental text-[10px] sm:text-[30px] text-white py-4">
                         {row.title}
                       </h2>
                     </TableCell>
-                    <TableCell className="p-1 sm:p-4 font-light text-white text-[12px] sm:text-[20px] text-justify">
+                    <TableCell className="font-helvetica p-1 sm:p-4 text-white text-[12px] sm:text-[20px] text-justify">
                       {row.description}
                     </TableCell>
                   </TableRow>

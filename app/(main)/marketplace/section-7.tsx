@@ -103,7 +103,7 @@ export default function Section7() {
                 <div className="bg-[#BDBDBD] px-2 sm:px-4 rounded-[25px] sm:rounded-[50px] shadow-[inset_-5px_-5px_20px_1px_rgba(255,255,255,0.25),inset_5px_5px_20px_1px_rgba(255,255,255,0.25)]">
                   <div className="p-4">
                     {/* Section Title */}
-                    <h1 className="text-center text-white text-xl sm:text-2xl font-bold py-6">
+                    <h1 className="text-center text-white text-xl sm:text-xl font-elemental lowercase py-6">
                       {data.cardHeader}
                     </h1>
 
@@ -120,7 +120,7 @@ export default function Section7() {
                     <div className="flex justify-center py-6">
                       <Button
                         asChild
-                        className="bg-white/90 text-black hover:bg-white border border-white/50 shadow-lg backdrop-blur-sm rounded-full px-8 py-2"
+                        className="font-elemental lowercase bg-white/90 text-black hover:bg-white border border-white/50 shadow-lg backdrop-blur-sm rounded-full px-8 py-2"
                       >
                         <Link href={`/products?tag=${data.slug}`}>
                           {data.btnText}
@@ -169,7 +169,7 @@ function ProductCard2({ product }: ProductCard2Props) {
         </div>
 
         {/* Product Info */}
-        <div className="p-3">
+        <div className="p-3 font-helvetica">
           <p className="text-white text-xs sm:text-sm font-medium whitespace-nowrap overflow-hidden text-ellipsis">
             {product.name}
           </p>

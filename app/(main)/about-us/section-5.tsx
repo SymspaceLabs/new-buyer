@@ -23,42 +23,42 @@ const staffs: Staff[] = [
     id: 1, 
     title: "zayden puton",
     role: "Founder & CEO",
-    imgUrl: "/assets/images/about-us/staff-1.png",
+    imgUrl: "/images/about-us/staff-1.png",
     slug: "zayden/"
   },
   { 
     id: 2, 
     title: "mo mohamed",
     role: "CTO",
-    imgUrl: "/assets/images/about-us/staff-2.png",
+    imgUrl: "/images/about-us/staff-2.png",
     slug: "mo-cafe/"
   },
   { 
     id: 3, 
     title: "Hamza Gulistan",
     role: "CPO",
-    imgUrl: "/assets/images/about-us/staff-3.png",
+    imgUrl: "/images/about-us/staff-3.png",
     slug: "hamza-gulistan/"
   },
   { 
     id: 4,
     title: "allen mustacchi",
     role: "CSO",
-    imgUrl: "/assets/images/about-us/staff-4.png",
+    imgUrl: "/images/about-us/staff-4.png",
     slug: "allen-mustacchi-5ba28b6b/"
   },
   { 
     id: 5,
     title: "thilak sundaram",
     role: "Full Stack Developer",
-    imgUrl: "/assets/images/about-us/staff-5.png",
+    imgUrl: "/images/about-us/staff-5.png",
     slug: "thilak-sundaram"
   },
   { 
     id: 6,
     title: "steve lee chun",
     role: "Lead 3D /VFX Designer",
-    imgUrl: "/assets/images/about-us/staff-6.png",
+    imgUrl: "/images/about-us/staff-6.png",
     slug: "lee-thong-chun-025baa16a/"
   },
 ];
@@ -111,7 +111,7 @@ export default function Section5() {
             variants={titleVariants}
           >
             {/* Section title */}
-            <h1 className="text-[24px] sm:text-[35px] text-white [word-spacing:10px]">
+            <h1 className="font-elemental text-[24px] sm:text-[35px] text-white [word-spacing:10px]">
               our leadership team
             </h1>
           </motion.div>
@@ -157,10 +157,10 @@ export default function Section5() {
                           />
                           {/* Staff title and role */}
                           <div className="flex flex-col items-center gap-1">
-                            <h2 className="text-white text-lg font-normal capitalize text-center">
+                            <h2 className="font-elemental lowercase text-white text-lg font-normal capitalize text-center">
                               {staff.title}
                             </h2>
-                            <p className="text-white text-sm font-light text-center">
+                            <p className="font-helvetica text-white text-sm font-light text-center">
                               {staff.role}
                             </p>
                           </div>

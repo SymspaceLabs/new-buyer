@@ -32,10 +32,10 @@ export default function Section2() {
   return (
     <div className="w-full flex flex-col items-center py-9 px-4">
       <div className="w-full max-w-[1400px]">
-        <h1 className="border-b border-white py-1 text-[25px] sm:text-[35px] text-white">
-          our Mission
+        <h1 className="font-elemental lowercase border-b border-white py-1 text-[25px] sm:text-[35px] text-white">
+          our mission
         </h1>
-        <div className="max-w-[1200px] pt-4">
+        <div className="max-w-[1200px] pt-4 font-helvetica">
           <p className="pb-3 text-[15px] sm:text-[20px] text-white text-justify">
             We envision a future where anyone, anywhere can experience products in the real-world—conveniently, confidently, and comfortably.
           </p>
