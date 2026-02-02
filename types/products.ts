@@ -15,17 +15,6 @@ export interface ProductSize {
   };
 }
 
-export interface ProductSize {
-  id: string;
-  size: string;
-  sizeChartUrl?: string;
-  dimensions?: {
-    length: number;
-    width: number;
-    height: number;
-  };
-}
-
 export interface ProductImage {
   url: string;
   colorId?: string;

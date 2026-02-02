@@ -52,4 +52,4 @@ export type FavoritesAction =
   | { type: "SET_ERROR"; payload: string | null }
   | { type: "CLEAR_FAVORITES" };
 
-export { ProductColor, ProductSize };
+export type { ProductColor, ProductSize };

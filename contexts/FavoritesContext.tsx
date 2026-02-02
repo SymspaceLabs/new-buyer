@@ -32,7 +32,7 @@ const reducer = (state: FavoritesState, action: FavoritesAction): FavoritesState
     case "TOGGLE_FAVORITE": {
       const key = createFavoriteKey(
         action.payload.id, 
-        action.payload.selectedColor?.value,
+        action.payload.selectedColor?.code,
         action.payload.selectedSize ?? undefined
       );
       

@@ -566,7 +566,7 @@ export default function Header({
         isOpen={isFavoritesOpen} 
         onClose={() => setIsFavoritesOpen(false)}
         items={favoriteProducts.map(fav => ({
-          id: parseInt(fav.id) || 0,
+          id: fav.id,
           name: fav.name,
           price: fav.displayPrice?.salePrice || fav.displayPrice?.price || 0,
           image: fav.thumbnail || '',
