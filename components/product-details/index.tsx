@@ -186,10 +186,7 @@ export default function ProductDetail({ slug }: ProductDetailsProps) {
       type: "TOGGLE_FAVORITE",
       payload: {
         id: product.id,
-        selectedColor: {
-          value: selectedColor.code,
-          label: selectedColor.name
-        },
+        selectedColor: selectedColor, 
         selectedSize: selectedSize.id,
         snapshot: {
           id: product.id,
@@ -198,10 +195,7 @@ export default function ProductDetail({ slug }: ProductDetailsProps) {
           thumbnail: product.thumbnail,
           displayPrice: product.displayPrice,
           stock: product.stock,
-          selectedColor: {
-            value: selectedColor.code,
-            label: selectedColor.name
-          },
+          selectedColor: selectedColor,
           selectedSize: selectedSize.id,
         }
       }

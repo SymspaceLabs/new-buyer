@@ -19,10 +19,7 @@ export interface FavoriteProduct {
     hasSale: boolean;
   };
   stock: number;
-  selectedColor?: {
-    value: string;
-    label: string;
-  };
+  selectedColor?: ProductColor;
   selectedSize?: string;
   _favoriteKey?: string;
 }
