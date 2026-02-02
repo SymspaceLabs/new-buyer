@@ -1,6 +1,6 @@
 export interface ProductColor {
   id: string;
-  label: string;
+  name: string;
   code: string;
 }
 
