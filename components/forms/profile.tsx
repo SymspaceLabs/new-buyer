@@ -32,11 +32,11 @@ const ProfileForm = ({
 }: ProfileFormProps) => {
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width:600px)').matches;
 
-  const handleFirstNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFirstNameChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFirstName(event.target.value);
   };
 
-  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setLastName(event.target.value);
   };
 
