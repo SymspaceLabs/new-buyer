@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
 import { CategoryAccordion } from './category-accordion';
+import { Category } from '@/types/category';
 
 interface Brand {
   id: string | number;
@@ -18,13 +19,6 @@ interface Brand {
 interface Color {
   code: string;
   name: string;
-}
-
-interface Category {
-  id: string | number;
-  name: string;
-  slug: string;
-  child?: Category[];
 }
 
 export interface ProductFilterCardProps {
