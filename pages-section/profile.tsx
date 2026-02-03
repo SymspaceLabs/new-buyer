@@ -11,6 +11,7 @@ import UserAnalytics from "@/components/user-analytics";
 import { SymDashboardHeader } from "@/components/sym-dashboard-header";
 // import { ProfileForm, MeasurementForm, PreferenceForm } from "@/components/custom-forms";
 import MeasurementForm from "@/components/forms/measurement";
+import ProfileForm from "@/components/forms/profile";
 
 // ==============================================================
 // Type Definitions
@@ -28,8 +29,8 @@ interface Weight {
 
 interface UserData {
   id: string;
-  firstName?: string;
-  lastName?: string;
+  firstName: string;
+  lastName: string;
   email: string;
   dob?: string;
   avatar?: string;
@@ -110,6 +111,8 @@ export default function ProfilePage({ isEdit }: ProfilePageProps) {
   };
 
   useEffect(() => {
+    if (!user?.id) return; // ← early return keeps everything below safe
+
     const getUserData = async () => {
       if (user?.id) {
         try {
@@ -202,6 +205,7 @@ export default function ProfilePage({ isEdit }: ProfilePageProps) {
   }
 
   const handleSave = async () => {
+    if (!user?.id) return;
     setLoading(true);
     let finalAvatarUrl = avatarUrl;
 
@@ -319,7 +323,7 @@ export default function ProfilePage({ isEdit }: ProfilePageProps) {
       </div>
       
       <div className="rounded-2xl w-full text-white flex flex-wrap p-6 flex-col sm:flex-row items-start sm:items-start bg-gradient-to-br from-white/50 via-[#ebebeb5e] to-[#c4c4c41a] justify-start sm:justify-between">
-        <PreferenceForm
+        {/* <PreferenceForm
           gender={gender}
           setGender={setGender}
           styles={styles}
@@ -340,7 +344,7 @@ export default function ProfilePage({ isEdit }: ProfilePageProps) {
           setAccessories={setAccessories}
           isMobile={isMobile}
           isEdit={isEdit}
-        />
+        /> */}
       </div>
     </div>
   );
