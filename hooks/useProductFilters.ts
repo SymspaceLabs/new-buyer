@@ -2,7 +2,8 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ReadonlyURLSearchParams } from 'next/navigation';
-import { Product } from '@/types/products';
+
+type MinimalProduct = Record<string, any>;
 
 interface Brand {
   id: string | number;
@@ -22,7 +23,7 @@ interface Category {
 }
 
 interface InitialData {
-  allProducts: Product[];
+  allProducts: MinimalProduct[];
   allBrands: Brand[];
   priceLimits: [number, number];
   category: Category[];
@@ -38,7 +39,7 @@ export interface FilterState {
   checkedCategoryIds: string[];
   selectedAvailabilities: string[];
   selectedColors: Color[];
-  allProducts: Product[];
+  allProducts: MinimalProduct[];
   allBrands: Brand[];
   category: Category[];
   allGenders: string[];

@@ -72,7 +72,7 @@ function getEffectivePrice(product: Product): number {
 export function useFilteredAndSortedProducts(
   filterState: FilterState,
   sortOption: SortOption
-): Product[] {
+): any[] {
   return useMemo(() => {
     // Start with a fresh copy of the product list
     let list = [...filterState.allProducts];

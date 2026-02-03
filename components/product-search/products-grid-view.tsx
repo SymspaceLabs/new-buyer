@@ -21,7 +21,7 @@ interface Product {
 }
 
 interface ProductsGridViewProps {
-  products: Product[];
+  products: any[];
   loading: boolean;
   itemsPerPage?: number;
 }

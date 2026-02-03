@@ -22,13 +22,13 @@ interface Color {
 }
 
 export interface ProductFilterCardProps {
-  allBrands: Brand[];
-  selectedBrands: Brand[];
+  allBrands: any[];
+  selectedBrands: any[];
   setSelectedBrands: (brands: Brand[]) => void;
   priceRange: [number, number];
   setPriceRange: (range: [number, number]) => void;
   priceLimits: [number, number];
-  category: Category[];
+  category: any[];
   checkedCategoryIds: string[];
   onCategoryFilterChange: (categoryId: string, isChecked: boolean) => void;
   allGenders: string[];
@@ -37,7 +37,7 @@ export interface ProductFilterCardProps {
   allAvailabilities: string[];
   selectedAvailabilities: string[];
   onAvailabilityFilterChange: (availability: string, isChecked: boolean) => void;
-  allColors: Color[];
+  allColors: any[];
   selectedColors: Color[];
   onColorFilterChange: (color: Color, isChecked: boolean) => void;
   onClearAllFilters: () => void;
