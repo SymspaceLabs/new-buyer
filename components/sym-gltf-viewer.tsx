@@ -1,13 +1,13 @@
 'use client';
 
+import JSZip from 'jszip';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls, Stage, useGLTF, useFBX, Html } from '@react-three/drei';
-import React, { Suspense, useState, useEffect } from 'react';
-import JSZip from 'jszip';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
+import { Suspense, useState, useEffect, JSX } from 'react';
 import { Group, Mesh, Material } from 'three';
+
+import { GLTFLoader, GLTF } from 'three/addons/loaders/GLTFLoader.js';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 
 interface ModelProps {
   url: string;
