@@ -3,8 +3,9 @@
 // app/(auth)/Reset-password/page.tsx
 // =========================================
 
-import { Metadata } from 'next';
-import ResetPasswordPage from '@/pages-section/reset-password';
+import { Suspense } from "react";
+import { Metadata } from "next";
+import ResetPasswordPage from "@/pages-section/reset-password";
 
 export const metadata: Metadata = {
   title: "Reset Password - Symspace",
@@ -12,5 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function ResetPassword() {
-  return <ResetPasswordPage />
+  return (
+    <Suspense fallback={null}>
+      <ResetPasswordPage />
+    </Suspense>
+  );
 }
