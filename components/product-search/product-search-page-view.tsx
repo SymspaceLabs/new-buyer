@@ -1,18 +1,18 @@
 // src/components/product-search/product-search-page-view.tsx
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useState, useMemo, useCallback } from 'react';
 import { useProductData } from '@/hooks/useProductData';
 import { useProductFilters } from '@/hooks/useProductFilters';
 import { useFilteredAndSortedProducts } from '@/hooks/useFilteredAndSortedProducts';
 
-import MobileProductHeader from './mobile-product-header';
-import ProductFilterCard from './product-filter-card';
-import ProductFilterDrawer from './product-filter-drawer';
-import ProductsGridView from './products-grid-view';
 import TopSortCard from './top-sort-card';
+import ProductsGridView from './products-grid-view';
+import ProductFilterCard from './product-filter-card';
+import MobileProductHeader from './mobile-product-header';
+import ProductFilterDrawer from './product-filter-drawer';
 
 type SortOption = 'latest' | 'relevance' | 'price-asc' | 'price-desc';
 

@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ReadonlyURLSearchParams } from 'next/navigation';
+import { Product } from '@/types/products';
 
 type MinimalProduct = Record<string, any>;
 
@@ -23,7 +24,7 @@ interface Category {
 }
 
 interface InitialData {
-  allProducts: MinimalProduct[];
+  allProducts: any[];
   allBrands: Brand[];
   priceLimits: [number, number];
   category: Category[];

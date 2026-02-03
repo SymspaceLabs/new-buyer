@@ -70,7 +70,7 @@ function getEffectivePrice(product: Product): number {
  * @returns The final array of filtered and sorted products
  */
 export function useFilteredAndSortedProducts(
-  filterState: FilterState,
+  filterState: any,
   sortOption: SortOption
 ): any[] {
   return useMemo(() => {
@@ -90,7 +90,7 @@ export function useFilteredAndSortedProducts(
     // BRAND FILTER (Client-side only)
     // =============================
     if (filterState.selectedBrands && filterState.selectedBrands.length > 0) {
-      const brandIds = new Set(filterState.selectedBrands.map((b) => b.id));
+      const brandIds = new Set(filterState.selectedBrands.map((b:any) => b.id));
       list = list.filter((p) => p.company && p.company.id && brandIds.has(p.company.id));
     }
 
@@ -99,7 +99,7 @@ export function useFilteredAndSortedProducts(
     // =============================
     if (filterState.selectedGenders && filterState.selectedGenders.length > 0) {
       const selectedGendersLower = new Set(
-        filterState.selectedGenders.map((g) => g.toLowerCase())
+        filterState.selectedGenders.map((g:any) => g.toLowerCase())
       );
 
       list = list.filter((p) => {
@@ -142,10 +142,10 @@ export function useFilteredAndSortedProducts(
     // =============================
     if (filterState.selectedColors && filterState.selectedColors.length > 0) {
       const colorCodes = new Set(
-        filterState.selectedColors.map((c) => c.code?.toLowerCase()).filter(Boolean)
+        filterState.selectedColors.map((c:any) => c.code?.toLowerCase()).filter(Boolean)
       );
       list = list.filter((p) =>
-        p.colors?.some((c) => c.code && colorCodes.has(c.code.toLowerCase()))
+        p.colors?.some((c:any) => c.code && colorCodes.has(c.code.toLowerCase()))
       );
     }
 
