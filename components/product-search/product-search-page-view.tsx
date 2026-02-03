@@ -14,10 +14,12 @@ import ProductFilterDrawer from './product-filter-drawer';
 import ProductsGridView from './products-grid-view';
 import TopSortCard from './top-sort-card';
 
+type SortOption = 'latest' | 'relevance' | 'price-asc' | 'price-desc';
+
 export default function ProductSearchPageView() {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [sortOption, setSortOption] = useState('latest');
+  const [sortOption, setSortOption] = useState<SortOption>('latest');
   const searchParams = useSearchParams();
   const paramsString = searchParams.toString();
 
@@ -100,7 +102,7 @@ export default function ProductSearchPageView() {
 
   // Handlers
   const handleSortChange = useCallback((value: string) => {
-    setSortOption(value);
+    setSortOption(value  as SortOption);
   }, []);
 
   const toggleDrawer = useCallback(() => {

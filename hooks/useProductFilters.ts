@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ReadonlyURLSearchParams } from 'next/navigation';
+import { Product } from '@/types/products';
 
 interface Brand {
   id: string | number;
@@ -18,11 +19,6 @@ interface Category {
   name: string;
   slug: string;
   child?: Category[];
-}
-
-interface Product {
-  id: string | number;
-  [key: string]: any;
 }
 
 interface InitialData {

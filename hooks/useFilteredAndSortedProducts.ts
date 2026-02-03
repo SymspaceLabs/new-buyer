@@ -1,16 +1,7 @@
 // src/hooks/useFilteredAndSortedProducts.ts
 import { useMemo } from 'react';
-
-interface DisplayPrice {
-  price: number;
-  salePrice?: number;
-  hasSale?: boolean;
-}
-
-interface Category {
-  id: string | number;
-  parent?: Category;
-}
+import { Product } from '@/types/products';
+import { ProductCategory } from '@/types/category';
 
 interface Color {
   code: string;
@@ -20,18 +11,6 @@ interface Color {
 interface Company {
   id: string | number;
   entityName: string;
-}
-
-interface Product {
-  id: string | number;
-  displayPrice?: DisplayPrice;
-  category?: Category;
-  company?: Company;
-  gender?: string;
-  availability?: string;
-  colors?: Color[];
-  createdAt: string;
-  [key: string]: any;
 }
 
 interface Brand {
@@ -59,9 +38,8 @@ function productMatchesCategory(product: Product, categoryIds: string[]): boolea
   if (!categoryIds || categoryIds.length === 0) return true;
   if (!product.category) return false;
 
-  let currentCategory: Category | undefined = product.category;
+  let currentCategory: ProductCategory | undefined = product.category;
 
-  // Traverse up the category hierarchy
   while (currentCategory) {
     if (categoryIds.includes(String(currentCategory.id))) {
       return true;

@@ -1,3 +1,5 @@
+import { ProductCategory } from "./category";
+
 export interface ProductColor {
   id: string;
   name: string;
@@ -29,18 +31,14 @@ export interface Product {
   thumbnail: string;
   stock: number;
   availability: string;
+  gender?: string;
+  createdAt: string;
   material?: string;
-  company?: { entityName: string };
-  category?: {
-    name: string;
-    parent?: {
-      name: string;
-      parent?: {
-        name: string;
-        parent?: { name: string };
-      };
-    };
+  company?: { 
+    id: string | number;
+    entityName: string
   };
+  category?: ProductCategory;
   displayPrice: {
     price: number;
     salePrice?: number;

@@ -10,3 +10,10 @@ export interface CategoryChild {
   slug: string;
   child?: CategoryChild[];
 }
+
+
+export interface ProductCategory {
+  id: string | number;
+  name: string;
+  parent?: ProductCategory;
+}
