@@ -45,7 +45,7 @@ export default function UserAnalytics({
     title: user?.totalOrders !== undefined ? user.totalOrders.toString() : "0",
     subtitle: "All Orders"
   }, {
-    title: favState?.favorites?.length.toString() || "0",
+    title: favState?.favoriteIds?.length.toString() || "0",
     subtitle: "Favorites"
   }, {
     title: "0",
