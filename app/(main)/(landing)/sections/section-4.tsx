@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { memo, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // ============================================================================
 // CONSTANTS
@@ -13,19 +13,19 @@ import { Button } from '@/components/ui/button';
  * Product categories for AR marketplace
  */
 const CATEGORIES = [
-  { id: 1, title: "T-shirts", thumbnail: "/assets/images/icons/shirt.svg", slug: "subcategoryItem=t-shirts" },
-  { id: 2, title: "Hoodies", thumbnail: "/assets/images/icons/hoodie.svg", slug: "subcategoryItem=hoodie" },
-  { id: 3, title: "Pants", thumbnail: "/assets/images/icons/pants.svg", slug: "subcategoryItem=pants" },
-  { id: 4, title: "Furniture", thumbnail: "/assets/images/icons/furniture.svg", slug: "subcategory=furniture" },
-  { id: 5, title: "Shoes", thumbnail: "/assets/images/icons/shoe.svg", slug: "subcategory=shoes" },
-  { id: 6, title: "Dresses", thumbnail: "/assets/images/icons/dress-2.svg", slug: "subcategory=dress" },
-  { id: 7, title: "Earrings", thumbnail: "/assets/images/icons/earring.svg", slug: "subcategoryItem=earring" },
-  { id: 8, title: "Accessories", thumbnail: "/assets/images/icons/accessory.svg", slug: "subcategory=accessories" },
-  { id: 9, title: "Bags", thumbnail: "/assets/images/icons/bag-2.svg", slug: "subcategoryItem=bags" },
-  { id: 10, title: "Hats", thumbnail: "/assets/images/icons/hat.svg", slug: "subcategoryItem=hat" },
-  { id: 11, title: "Watches", thumbnail: "/assets/images/icons/watch-2.svg", slug: "subcategoryItem=watch" },
-  { id: 12, title: "Eyewear", thumbnail: "/assets/images/icons/eyewear.svg", slug: "eyewear" },
-  { id: 13, title: "TVs", thumbnail: "/assets/images/icons/tv.svg", slug: "subcategoryItem=tv" }
+  { id: 1, title: "T-shirts", thumbnail: "/images/icons/shirt.svg", slug: "subcategoryItem=t-shirts" },
+  { id: 2, title: "Hoodies", thumbnail: "/images/icons/hoodie.svg", slug: "subcategoryItem=hoodie" },
+  { id: 3, title: "Pants", thumbnail: "/images/icons/pants.svg", slug: "subcategoryItem=pants" },
+  { id: 4, title: "Furniture", thumbnail: "/images/icons/furniture.svg", slug: "subcategory=furniture" },
+  { id: 5, title: "Shoes", thumbnail: "/images/icons/shoe.svg", slug: "subcategory=shoes" },
+  { id: 6, title: "Dresses", thumbnail: "/images/icons/dress-2.svg", slug: "subcategory=dress" },
+  { id: 7, title: "Earrings", thumbnail: "/images/icons/earring.svg", slug: "subcategoryItem=earring" },
+  { id: 8, title: "Accessories", thumbnail: "/images/icons/accessory.svg", slug: "subcategory=accessories" },
+  { id: 9, title: "Bags", thumbnail: "/images/icons/bag-2.svg", slug: "subcategoryItem=bags" },
+  { id: 10, title: "Hats", thumbnail: "/images/icons/hat.svg", slug: "subcategoryItem=hat" },
+  { id: 11, title: "Watches", thumbnail: "/images/icons/watch-2.svg", slug: "subcategoryItem=watch" },
+  { id: 12, title: "Eyewear", thumbnail: "/images/icons/eyewear.svg", slug: "eyewear" },
+  { id: 13, title: "TVs", thumbnail: "/images/icons/tv.svg", slug: "subcategoryItem=tv" }
 ] as const;
 
 /**
@@ -43,13 +43,7 @@ const ANIMATION_CONFIG = {
 // ============================================================================
 
 const styles = {
-  container: "bg-white",
-  contentWrapper: "container mx-auto py-6 md:py-20 px-4",
-  header: "flex items-center justify-between py-4 sm:py-10 relative",
-  title: "text-xl sm:text-[18px] text-center z-[5] font-elemental lowercase",
-  
   // Navigation
-  navButtons: "hidden sm:flex gap-2 z-[1]",
   navButton: "w-10 h-10 rounded-full hover:bg-gray-100 transition-colors",
   navButtonActive: "bg-white shadow-md",
   
@@ -62,21 +56,15 @@ const styles = {
     [&::-webkit-scrollbar]:hidden
     snap-x snap-mandatory
   `,
-  
-  // Desktop grid
-  desktopGrid: "hidden sm:grid grid-cols-6 gap-4",
-  
+    
   // Category card
   categoryCard: `
     flex flex-col items-center justify-center gap-2 sm:gap-4
     py-4 sm:py-10 px-2
     bg-[#353535] rounded-2xl
     transition-all duration-300 hover:scale-105 hover:shadow-lg
-    cursor-pointer
-  `,
+    cursor-pointer`,
   categoryCardMobile: "min-w-[85px] snap-start flex-shrink-0",
-  categoryIcon: "w-8 h-8 sm:w-10 sm:h-10",
-  categoryTitle: "text-xs sm:text-lg text-white text-center font-bold"
 } as const;
 
 // ============================================================================
@@ -106,10 +94,10 @@ const CategoryCard = memo(({
     <img
       alt={category.title}
       src={category.thumbnail}
-      className={styles.categoryIcon}
+      className="w-8 h-8 sm:w-10 sm:h-10"
       loading="lazy"
     />
-    <h3 className={styles.categoryTitle}>
+    <h3 className="font-helvetica text-xs sm:text-lg text-white text-center font-bold">
       {category.title}
     </h3>
   </a>
@@ -143,7 +131,7 @@ const DesktopGrid = memo(({ startIndex }: { startIndex: number }) => {
   const visibleCategories = CATEGORIES.slice(startIndex, startIndex + 6);
   
   return (
-    <div className={styles.desktopGrid}>
+    <div className="hidden sm:grid grid-cols-6 gap-4">
       {visibleCategories.map((category) => (
         <motion.div
           key={category.id}
@@ -182,7 +170,7 @@ const NavigationButtons = memo(({
   canGoPrev: boolean;
   canGoNext: boolean;
 }) => (
-  <div className={styles.navButtons}>
+  <div className="hidden sm:flex gap-2 z-[1]">
     <Button
       variant="ghost"
       size="icon"
@@ -250,8 +238,8 @@ export default function Section4() {
   const canGoNext = startIndex < maxIndex;
 
   return (
-    <section className={styles.container} aria-label="Product Categories">
-      <div className={styles.contentWrapper}>
+    <section className="bg-white" aria-label="Product Categories">
+      <div className="container mx-auto py-6 md:py-20 px-4">
         <motion.div
           initial={ANIMATION_CONFIG.initial}
           whileInView={ANIMATION_CONFIG.animate}
@@ -259,8 +247,8 @@ export default function Section4() {
           viewport={ANIMATION_CONFIG.viewport}
         >
           {/* Header with title and navigation */}
-          <div className={styles.header}>
-            <h2 className={styles.title}>
+          <div className="flex items-center justify-between py-4 sm:py-10 relative">
+            <h2 className="text-xl sm:text-[18px] text-center z-[5] font-elemental lowercase">
               Augmented Reality Marketplaces
             </h2>
             

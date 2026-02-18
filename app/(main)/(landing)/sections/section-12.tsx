@@ -114,7 +114,7 @@ export const CustomCard1 = ({ number, description }: CustomCard1Props): JSX.Elem
         <div className="flex">
           <Link href="/global-impact">
             <Button
-              className="fadeInBtn opacity-100 sm:opacity-0 transform-none sm:translate-y-5 transition-none sm:transition-all sm:duration-300 sm:ease-in-out group-hover:opacity-100 group-hover:translate-y-0 py-1 sm:py-4 px-2 sm:px-6 rounded-[50px] border-2 border-black text-black text-[8px] sm:text-xs mb-0 sm:mb-10 bg-transparent hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] hover:text-white hover:border-white"
+              className="font-elemental fadeInBtn opacity-100 sm:opacity-0 transform-none sm:translate-y-5 transition-none sm:transition-all sm:duration-300 sm:ease-in-out group-hover:opacity-100 group-hover:translate-y-0 py-1 sm:py-4 px-2 sm:px-6 rounded-[50px] border-2 border-black text-black text-[8px] sm:text-xs mb-0 sm:mb-10 bg-transparent hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] hover:text-white hover:border-white"
             >
               Learn More
             </Button>
@@ -137,11 +137,11 @@ export const CustomCard2 = (): JSX.Element => {
       <CardContent
         className="flex flex-col justify-center items-center gap-6 sm:gap-8 py-8 sm:py-16 px-4 sm:px-20"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase text-black">
+        <h1 className="font-elemental text-4xl sm:text-5xl md:text-5xl lowercase text-black">
           AR Visuals
         </h1>
         <p
-          className="text-[#353535] text-sm sm:text-xl font-medium text-justify leading-7"
+          className="font-helvetica text-[#353535] text-sm sm:text-xl font-medium text-justify leading-7"
         >
           We create unique AR experiences for brands helping them bring any idea into reality.
           Augment animated visuals on top of products, displays, or billboards for an immersive marketing medium.
@@ -150,7 +150,7 @@ export const CustomCard2 = (): JSX.Element => {
         <div className="flex">
           <Link href="/contact-us">
             <Button
-              className="fadeInBtn opacity-100 sm:opacity-0 transform-none sm:translate-y-5 transition-none sm:transition-all sm:duration-300 sm:ease-in-out group-hover:opacity-100 group-hover:translate-y-0 py-1 sm:py-4 px-2 sm:px-6 rounded-[50px] border-2 border-black text-black text-[8px] sm:text-xs bg-transparent hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] hover:text-white hover:border-white"
+              className="font-elemental fadeInBtn opacity-100 sm:opacity-0 transform-none sm:translate-y-5 transition-none sm:transition-all sm:duration-300 sm:ease-in-out group-hover:opacity-100 group-hover:translate-y-0 py-1 sm:py-4 px-2 sm:px-6 rounded-[50px] border-2 border-black text-black text-[8px] sm:text-xs bg-transparent hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] hover:text-white hover:border-white"
             >
               Contact Us
             </Button>

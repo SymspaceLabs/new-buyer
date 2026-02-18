@@ -25,9 +25,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import Header2 from './header-2';
-
 import { HeartIcon, CartIcon, UserIcon } from './custom-icons';
-
 import { useFavorites } from '@/contexts/FavoritesContext';
 import { useCart } from '@/contexts/CartContext';
 import { fetchVariantDetails } from '@/api/product';
@@ -110,7 +108,7 @@ const NAVIGATION_MENU = [
 ] as const;
 
 const USER_MENU_ITEMS = [
-  { label: 'My Account', href: '/account' },
+  { label: 'Profile', href: '/profile/view' },
   { label: 'Orders', href: '/account/orders' },
   { label: 'Wishlist', href: '/account/wishlist' },
   { type: 'separator' as const },
@@ -292,7 +290,7 @@ const UserMenu = memo(({ isAuthenticated = false }: { isAuthenticated?: boolean 
           background: "linear-gradient(180deg, rgba(62, 61, 69, 0.6) 0%, rgba(32, 32, 32, 0.9) 100%)",
         }}
       >
-        <DropdownMenuLabel className="text-white/90">My Account</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-white/90">User Email here</DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-white/20" />
         {USER_MENU_ITEMS.map((item, index) => {
           // Type guard to check if item is a separator
@@ -310,7 +308,7 @@ const UserMenu = memo(({ isAuthenticated = false }: { isAuthenticated?: boolean 
             <DropdownMenuItem 
               key={item.href} 
               asChild
-              className={`cursor-pointer transition-all duration-200 ${
+              className={`font-elemental lowercase cursor-pointer transition-all duration-200 ${
                 'variant' in item && item.variant === 'destructive' 
                   ? 'text-red-400 hover:text-red-300 focus:bg-red-500/20 data-[highlighted]:bg-red-500/20' 
                   : 'text-white/90 hover:text-white focus:bg-gradient-to-r focus:from-[#3084FF] focus:via-[#2567CC] focus:to-[#1D4F99] focus:text-white data-[highlighted]:bg-gradient-to-r data-[highlighted]:from-[#3084FF] data-[highlighted]:via-[#2567CC] data-[highlighted]:to-[#1D4F99] data-[highlighted]:text-white'

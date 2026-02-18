@@ -67,7 +67,7 @@
   margin-inline: auto;   /* Centers the container */
   padding-inline: 1rem;  /* Default horizontal padding */
   width: 100%;           /* Full width on mobile */
-  max-width: 1200px;
+  max-width: 1300px;
 
   /* Optional: If you want specific padding for desktop */
   @media (width >= 1024px) {

@@ -1,9 +1,9 @@
 "use client";
 
 import { currency } from "@/lib";
-import { useFavorites } from "@/contexts/FavoritesContext";
-import ProfilePicUpload from "./profile-pic-upload";
 import { useRouter } from "next/navigation";
+import ProfilePicUpload from "./profile-pic-upload";
+import { useFavorites } from "@/contexts/FavoritesContext";
 
 // ==============================================================
 // Type Definitions
@@ -69,14 +69,14 @@ export default function UserAnalytics({
               
               <div className="flex justify-between flex-wrap flex-1">
                 <div>
-                  <h1 className="text-sm sm:text-2xl font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                  <h1 className="font-elemental text-sm sm:text-2xl whitespace-nowrap overflow-hidden text-ellipsis">
                     {`${user.firstName} ${user.lastName}`}
                   </h1>
-                  <h1 className="text-xs sm:text-xs font-bold">
+                  <h1 className="font-elemental text-xs sm:text-xs">
                     SYMSPACE
                   </h1>
 
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1 font-elemental ">
                     <p className="text-white text-xs sm:text-base">
                       SYMS
                     </p>

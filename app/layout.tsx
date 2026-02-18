@@ -3,9 +3,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Toaster } from "@/components/ui/sonner"
-import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { CartProvider } from "@/contexts/CartContext";
+import { FavoritesProvider } from "@/contexts/FavoritesContext";
 
 const elemental = localFont({
   src: '../public/fonts/elemental-end.ttf',

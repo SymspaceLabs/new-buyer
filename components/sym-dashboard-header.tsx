@@ -200,7 +200,7 @@ const MENUS: MenuSection[] = [{
     Icon: SlidersHorizontal,
     count: 3
   }, {
-    href: "/address",
+    href: "/addresses",
     title: "Addresses",
     Icon: MapPin,
     count: 16
@@ -354,9 +354,9 @@ function SymDashboardHeader({
   onClick,
   loading = false,
 }: SymDashboardHeaderProps) {
-  const HEADER_LINK = (
+  const HEADER_LINK = buttonText ? (
     <button
-      className="bg-gradient-to-r from-[#3084FF] to-[#1D4F99] text-white px-8 border-[3px] border-white rounded-xl hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] transition-all disabled:opacity-50 disabled:cursor-not-allowed py-2"
+      className="font-elemental lowercase bg-gradient-to-r from-[#3084FF] to-[#1D4F99] text-white px-8 border-[3px] border-white rounded-xl hover:bg-gradient-to-r hover:from-[#666666] hover:to-[#000000] transition-all disabled:opacity-50 disabled:cursor-not-allowed py-2"
       onClick={onClick}
       disabled={loading}
     >
@@ -366,14 +366,14 @@ function SymDashboardHeader({
         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mx-auto"></div>
       )}
     </button>
-  );
+  ) : null;
 
   return (
     <div className="bg-gradient-to-r from-[#3084FF] to-[#1D4F99] shadow-[0px_1px_24px_-1px_rgba(0,0,0,0.18)] backdrop-blur-xl rounded-t-2xl p-5 border-b-[5px] border-white flex flex-col">
       <div className="flex-grow flex items-center justify-between flex-row">
         <div className="flex items-center gap-3">
           {Icon && <Icon className="text-white" size={30} />}
-          <h1 className="text-white text-2xl font-bold">{title}</h1>
+          <h1 className="font-elemental lowercase text-white text-2xl">{title}</h1>
         </div>
 
         <div className="block md:hidden">
@@ -390,7 +390,7 @@ function SymDashboardHeader({
           </SideNav>
         </div>
 
-        <div className="hidden md:block">{HEADER_LINK}</div>
+        {HEADER_LINK && <div className="hidden md:block">{HEADER_LINK}</div>}
       </div>
     </div>
   );

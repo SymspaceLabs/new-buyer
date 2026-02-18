@@ -10,8 +10,9 @@ import { useAuth } from "@/contexts/AuthContext";
 import UserAnalytics from "@/components/user-analytics";
 import { SymDashboardHeader } from "@/components/sym-dashboard-header";
 // import { ProfileForm, MeasurementForm, PreferenceForm } from "@/components/custom-forms";
-import MeasurementForm from "@/components/forms/measurement";
 import ProfileForm from "@/components/forms/profile";
+import MeasurementForm from "@/components/forms/measurement";
+import PreferenceForm from "@/components/forms/preference";
 
 // ==============================================================
 // Type Definitions
@@ -323,7 +324,7 @@ export default function ProfilePage({ isEdit }: ProfilePageProps) {
       </div>
       
       <div className="rounded-2xl w-full text-white flex flex-wrap p-6 flex-col sm:flex-row items-start sm:items-start bg-gradient-to-br from-white/50 via-[#ebebeb5e] to-[#c4c4c41a] justify-start sm:justify-between">
-        {/* <PreferenceForm
+        <PreferenceForm
           gender={gender}
           setGender={setGender}
           styles={styles}
@@ -344,7 +345,7 @@ export default function ProfilePage({ isEdit }: ProfilePageProps) {
           setAccessories={setAccessories}
           isMobile={isMobile}
           isEdit={isEdit}
-        /> */}
+        />
       </div>
     </div>
   );

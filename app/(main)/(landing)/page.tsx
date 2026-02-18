@@ -30,11 +30,16 @@ import Section13 from './sections/section-13';
 import Section14 from './sections/section-14';
 import Section15 from './sections/section-15';
 import Section16 from './sections/section-16';
+import BlobBackground from '@/components/blob-background';
 
 // ✅ Server Component (default) - No 'use client' needed
 export default function LandingPage() {
   return (
-    <main className="relative bg-[#1F1F1F]">
+    <main className="relative bg-[#1F1F1F] overflow-hidden">
+      {/* Background Blobs */}
+      <BlobBackground />
+      
+      {/* Sections */}
       <Section1 />
       <Section2 />
       <Section3 />

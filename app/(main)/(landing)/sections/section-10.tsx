@@ -76,7 +76,7 @@ export default function Section10() {
                         index % 2 === 0 ? 'bg-[#D5D5D5]' : 'bg-white'
                       }`}
                     >
-                      <p className="text-black text-xs sm:text-xl font-bold font-helvetica">
+                      <p className="font-helvetica text-black text-xs sm:text-xl font-bold">
                         {feature}
                       </p>
                     </div>

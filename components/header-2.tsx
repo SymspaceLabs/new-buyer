@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import navigation from "@/data/navbarNavigation";
 import { CATEGORIES_DATA } from "@/data/categories.data";
-import { ChevronRight, ChevronDown, Menu, X } from "lucide-react";
+import { ChevronRight, ChevronDown, Menu } from "lucide-react";
 
 interface NavItemChildProps {
   nav: {
@@ -150,7 +150,7 @@ const categories = [
 ];
 
 // ==============================================================
-// CategoriesDropdown Component - Multi-Level Nested
+// CategoriesDropdown Component - FIXED STYLING TO MATCH MUI
 // ==============================================================
 function CategoriesDropdown({ onClose }: { onClose: () => void }) {
   return (
@@ -161,19 +161,16 @@ function CategoriesDropdown({ onClose }: { onClose: () => void }) {
         onClick={onClose}
       />
 
-      {/* Dropdown Menu - FIXED: z-50 to appear above backdrop */}
-      <div className="absolute left-4 top-full mt-0 z-50">
-        <Card className="py-2 w-[280px] bg-white shadow-xl border border-gray-200">
-          <div className="px-3 py-2 border-b border-gray-200 flex items-center justify-between">
-            <span className="font-bold text-gray-800">All Categories</span>
-            <button
-              onClick={onClose}
-              className="p-1 hover:bg-gray-100 rounded-full transition-colors"
-            >
-              <X className="w-4 h-4 text-gray-600" />
-            </button>
-          </div>
-          <div className="py-2">
+      {/* Dropdown Menu - FIXED: Matches MUI SymCard styling */}
+      <div className="absolute left-4 top-full mt-2.5 z-50">
+        <Card 
+          className="py-2 w-[280px] shadow-lg border border-white rounded-lg overflow-visible"
+          style={{
+            background: 'linear-gradient(180deg, rgba(62, 61, 69, 0.6) 0%, rgba(32, 32, 32, 0.9) 100%)',
+            color: '#fff'
+          }}
+        >
+          <div className="py-1">
             {CATEGORIES_DATA.map((category) => (
               <CategoryMenuItem
                 key={category.id}
@@ -189,7 +186,7 @@ function CategoriesDropdown({ onClose }: { onClose: () => void }) {
 }
 
 // ==============================================================
-// CategoryMenuItem Component - Main Category Level
+// CategoryMenuItem Component - FIXED STYLING
 // ==============================================================
 function CategoryMenuItem({ category, onClose }: { category: any; onClose: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -216,23 +213,29 @@ function CategoryMenuItem({ category, onClose }: { category: any; onClose: () =>
       <Link
         href={`/products/${category.slug}`}
         onClick={onClose}
-        className="flex items-center justify-between px-4 py-2.5 hover:bg-blue-50 transition-colors cursor-pointer"
+        className="flex items-center justify-between px-4 py-2 hover:bg-white/5 transition-colors cursor-pointer"
       >
-        <span className="text-gray-700 font-medium">{category.name}</span>
+        <span className="text-white font-elemental lowercase text-[14px]">{category.name}</span>
         {category.subcategories && category.subcategories.length > 0 && (
-          <ChevronRight className="w-4 h-4 text-gray-400" />
+          <ChevronRight className="w-4 h-4 text-white/70" />
         )}
       </Link>
 
-      {/* Subcategories Dropdown */}
+      {/* Subcategories Dropdown - FIXED STYLING */}
       {isOpen && category.subcategories && category.subcategories.length > 0 && (
         <div
           ref={elementRef}
           className={`absolute top-0 z-10 ${
-            position === 'right' ? 'left-full ml-1' : 'right-full mr-1'
+            position === 'right' ? 'left-full pl-2' : 'right-full pr-2'
           }`}
         >
-          <Card className="py-2 w-[280px] bg-white shadow-xl border border-gray-200 max-h-[600px] overflow-y-auto">
+          <Card 
+            className="py-2 w-[280px] shadow-lg border border-white rounded-lg max-h-[600px] overflow-y-auto"
+            style={{
+              background: 'linear-gradient(180deg, rgba(62, 61, 69, 0.6) 0%, rgba(32, 32, 32, 0.9) 100%)',
+              color: '#fff'
+            }}
+          >
             {category.subcategories.map((subcategory: any) => (
               <SubcategoryMenuItem
                 key={subcategory.id}
@@ -249,7 +252,7 @@ function CategoryMenuItem({ category, onClose }: { category: any; onClose: () =>
 }
 
 // ==============================================================
-// SubcategoryMenuItem Component - Subcategory Level
+// SubcategoryMenuItem Component - FIXED STYLING
 // ==============================================================
 function SubcategoryMenuItem({
   subcategory,
@@ -284,23 +287,29 @@ function SubcategoryMenuItem({
       <Link
         href={`/products/${categorySlug}/${subcategory.slug}`}
         onClick={onClose}
-        className="flex items-center justify-between px-4 py-2.5 hover:bg-blue-50 transition-colors cursor-pointer"
+        className="flex items-center justify-between px-4 py-2 hover:bg-white/5 transition-colors cursor-pointer"
       >
-        <span className="text-gray-700">{subcategory.name}</span>
+        <span className="text-white font-elemental lowercase">{subcategory.name}</span>
         {subcategory.subcategoryItems && subcategory.subcategoryItems.length > 0 && (
-          <ChevronRight className="w-4 h-4 text-gray-400" />
+          <ChevronRight className="w-4 h-4 text-white/70" />
         )}
       </Link>
 
-      {/* Subcategory Items Dropdown */}
+      {/* Subcategory Items Dropdown - FIXED STYLING */}
       {isOpen && subcategory.subcategoryItems && subcategory.subcategoryItems.length > 0 && (
         <div
           ref={elementRef}
           className={`absolute top-0 z-10 ${
-            position === 'right' ? 'left-full ml-1' : 'right-full mr-1'
+            position === 'right' ? 'left-full pl-2' : 'right-full pr-2'
           }`}
         >
-          <Card className="py-2 w-[280px] bg-white shadow-xl border border-gray-200 max-h-[600px] overflow-y-auto">
+          <Card 
+            className="py-2 w-[280px] shadow-lg border border-white rounded-lg max-h-[600px] overflow-y-auto"
+            style={{
+              background: 'linear-gradient(180deg, rgba(62, 61, 69, 0.6) 0%, rgba(32, 32, 32, 0.9) 100%)',
+              color: '#fff'
+            }}
+          >
             {subcategory.subcategoryItems.map((item: any) => (
               <SubcategoryItemMenuItem
                 key={item.id}
@@ -318,7 +327,7 @@ function SubcategoryMenuItem({
 }
 
 // ==============================================================
-// SubcategoryItemMenuItem Component - Subcategory Item Level
+// SubcategoryItemMenuItem Component - FIXED STYLING
 // ==============================================================
 function SubcategoryItemMenuItem({
   item,
@@ -355,31 +364,37 @@ function SubcategoryItemMenuItem({
       <Link
         href={`/products/${categorySlug}/${subcategorySlug}/${item.slug}`}
         onClick={onClose}
-        className="flex items-center justify-between px-4 py-2.5 hover:bg-blue-50 transition-colors cursor-pointer"
+        className="flex items-center justify-between px-4 py-2 hover:bg-white/5 transition-colors cursor-pointer"
       >
-        <span className="text-gray-700 text-sm">{item.name}</span>
+        <span className="text-white font-elemental lowercase text-[14px]">{item.name}</span>
         {item.subcategoryItemChildren && item.subcategoryItemChildren.length > 0 && (
-          <ChevronRight className="w-4 h-4 text-gray-400" />
+          <ChevronRight className="w-4 h-4 text-white/70" />
         )}
       </Link>
 
-      {/* Subcategory Item Children Dropdown */}
+      {/* Subcategory Item Children Dropdown - FIXED STYLING */}
       {isOpen && item.subcategoryItemChildren && item.subcategoryItemChildren.length > 0 && (
         <div
           ref={elementRef}
           className={`absolute top-0 z-10 ${
-            position === 'right' ? 'left-full ml-1' : 'right-full mr-1'
+            position === 'right' ? 'left-full pl-2' : 'right-full pr-2'
           }`}
         >
-          <Card className="py-2 w-[280px] bg-white shadow-xl border border-gray-200 max-h-[600px] overflow-y-auto">
+          <Card 
+            className="py-2 w-[280px] shadow-lg border border-white rounded-lg max-h-[600px] overflow-y-auto"
+            style={{
+              background: 'linear-gradient(180deg, rgba(62, 61, 69, 0.6) 0%, rgba(32, 32, 32, 0.9) 100%)',
+              color: '#fff'
+            }}
+          >
             {item.subcategoryItemChildren.map((child: any) => (
               <Link
                 key={child.id}
                 href={`/products/${categorySlug}/${subcategorySlug}/${item.slug}/${child.slug}`}
                 onClick={onClose}
-                className="block px-4 py-2.5 hover:bg-blue-50 transition-colors cursor-pointer"
+                className="block px-4 py-2 hover:bg-white/5 transition-colors cursor-pointer"
               >
-                <span className="text-gray-700 text-sm">{child.name}</span>
+                <span className="text-white font-helvetica text-sm">{child.name}</span>
               </Link>
             ))}
           </Card>
@@ -519,17 +534,20 @@ function NavItemChild({ nav, children }: NavItemChildProps) {
 }
 
 // ==============================================================
-// Categories Component (Dropdown Button) - FIXED STYLING
+// Categories Component & CategoriesDropdown - FIXED STYLING
 // ==============================================================
 
 function Categories({ isOpen, onClose, onToggle }: CategoriesProps) {
   return (
-    <Button
-      onClick={onToggle}
-      className="flex items-center justify-start gap-2 min-w-[200px] h-[44px] px-6 rounded-full bg-[#3E3E3E] text-white font-medium text-[15px] hover:bg-[#2A2A2A] transition-colors shadow-sm"
-    >
-      <Menu className="w-5 h-5" />
-      <span className="lowercase tracking-wide font-elemental">Categories</span>
-    </Button>
+    <div className="relative flex flex-col items-center gap-4">
+      {/* Main Categories Button */}
+      <Button
+        onClick={onToggle}
+        className="flex items-center justify-start gap-2 min-w-[200px] h-[44px] px-4 rounded-full bg-[#717171] text-white font-medium text-[15px] hover:bg-black hover:text-[#717171] transition-colors shadow-sm"
+      >
+        <Menu className="w-5 h-5" />
+        <span className="lowercase tracking-wide font-elemental">Categories</span>
+      </Button>
+    </div>
   );
 }

@@ -29,7 +29,7 @@ const ProductCard1 = ({ product }: ProductCard1Props): JSX.Element => {
   const hasSale = product.displayPrice.salePrice && product.displayPrice.salePrice > 0 && product.displayPrice.salePrice < product.displayPrice.price;
 
   return (
-    <Link href={`/products/${product.slug}`} className="w-full block">
+    <Link href={`/products/${product.slug}`} className="w-full block font-helvetica">
       <div className="flex flex-col bg-white/10 rounded-xl mb-4 w-full h-full transition-colors duration-300 hover:bg-white/15">
         <div className="w-full">
           <Image
@@ -40,7 +40,6 @@ const ProductCard1 = ({ product }: ProductCard1Props): JSX.Element => {
             className="object-cover object-center w-full h-auto aspect-square rounded-t-xl"
           />
         </div>
-
         <div className="px-3 sm:px-8 pb-8 flex-grow">
           <p className="text-white text-[10px] sm:text-lg font-medium whitespace-nowrap overflow-hidden text-ellipsis">
             {product.name}

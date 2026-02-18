@@ -125,8 +125,8 @@ function StyledNavLink({ isCurrentPath, children, className, ...props }: StyledN
       className={clsx(
         "flex items-center justify-between mb-px p-[18px] rounded-[50px] transition-colors",
         isCurrentPath 
-          ? "bg-primary" 
-          : "bg-transparent hover:bg-primary",
+          ? "bg-[#3084FF]" 
+          : "bg-transparent hover:bg-[#3084FF]",
         className
       )}
       {...props}
@@ -191,7 +191,7 @@ const MENUS: MenuSection[] = [{
     Icon: SlidersHorizontal,
     count: 3
   }, {
-    href: "/address",
+    href: "/addresses",
     title: "Addresses",
     Icon: MapPin,
     count: 16
@@ -297,7 +297,7 @@ function Navigation({ mode = 'light' }: NavigationProps) {
         <Fragment key={item.title}>
           {item.title && (
             <h1 
-              className="p-[26px_26px_0px_0px] text-base font-bold"
+              className="font-elemental lowercase p-[26px_26px_0px_0px] text-base"
               style={{ color: textColor }}
             >
               {item.title}
@@ -321,7 +321,7 @@ function Navigation({ mode = 'light' }: NavigationProps) {
                   className="nav-icon" 
                 />
                 <h1 
-                  className="text-xs font-bold"
+                  className="font-elemental lowercase text-xs"
                   style={{ color: textColor }}
                 >
                   {title}

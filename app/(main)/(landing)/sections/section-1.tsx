@@ -1,9 +1,9 @@
 // app/(main)/(landing)/sections/section-1.tsx
 'use client';
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useState, useCallback, memo } from 'react';
 
 // ============================================================================
@@ -63,16 +63,6 @@ interface HeroVideoProps {
   shouldLoad: boolean;
 }
 
-interface BlobBoxProps {
-  top?: string;
-  right?: string;
-  bottom?: string;
-  left?: string;
-  background: string;
-  displayNoneMobile?: boolean;
-  widthHeight?: string;
-}
-
 // ============================================================================
 // CONSTANTS
 // ============================================================================
@@ -115,10 +105,6 @@ const ANIMATION_CONFIG: AnimationConfig = {
 // ============================================================================
 
 const styles = {
-  subtitle: "text-white/70 font-bold font-helvetica text-lg sm:text-[25px]",
-  title: "text-white text-5xl sm:text-6xl md:text-[90px] lowercase font-elemental",
-  description: "text-white text-[10px] sm:text-[18px] text-justify max-w-[600px] leading-[1.5] sm:leading-[2] mt-4 font-helvetica",
-  
   primaryCta: `
     flex items-center gap-3 
     bg-gradient-to-br from-[#18C8FF] to-[#933FFE] 
@@ -135,10 +121,6 @@ const styles = {
     hover:bg-gradient-to-r hover:from-white hover:to-gray-400 hover:text-black
   `.replace(/\s+/g, ' ').trim(),
   
-  container: "max-w-[1250px] mx-auto flex flex-col md:flex-row items-center gap-12 py-24 md:py-36 px-4 md:px-0",
-  leftColumn: "flex flex-col w-full md:w-1/2 z-20 md:mt-[-50px]",
-  rightColumn: "hidden md:flex w-full md:w-1/2 justify-center z-20",
-  videoWrapper: "relative max-w-[300px] md:max-w-[250px] overflow-hidden rounded-[40px] ml-20"
 } as const;
 
 // ============================================================================
@@ -165,39 +147,6 @@ const blobKeyframes = `
 // ============================================================================
 // COMPONENTS
 // ============================================================================
-
-/**
- * BlobBox Component
- * Animated gradient blob with customizable position and styling
- */
-const BlobBox = memo(({ 
-  top, 
-  right, 
-  bottom, 
-  left, 
-  background, 
-  displayNoneMobile = false, 
-  widthHeight = '500px' 
-}: BlobBoxProps) => (
-  <div
-    className={`absolute rounded-full ${displayNoneMobile ? 'hidden sm:block' : 'block'}`}
-    style={{
-      top,
-      right,
-      bottom,
-      left,
-      width: widthHeight,
-      height: widthHeight,
-      background,
-      zIndex: 0,
-      filter: 'blur(75px)',
-      opacity: 0.5,
-      animation: 'blob-animation 7s infinite',
-    }}
-  />
-));
-
-BlobBox.displayName = 'BlobBox';
 
 /**
  * CTAButton Component
@@ -240,7 +189,7 @@ CTAButton.displayName = 'CTAButton';
  * Only loads video when section enters viewport
  */
 const HeroVideo = memo(({ shouldLoad }: HeroVideoProps) => (
-  <div className={styles.videoWrapper}>
+  <div className="relative max-w-[300px] md:max-w-[250px] overflow-hidden rounded-[40px] ml-20">
     {shouldLoad ? (
       <video
         autoPlay
@@ -284,20 +233,20 @@ const HeroContent = memo(() => (
     whileInView={ANIMATION_CONFIG.animate}
     transition={ANIMATION_CONFIG.transition}
     viewport={ANIMATION_CONFIG.viewport}
-    className={styles.leftColumn}
+    className="flex flex-col w-full md:w-1/2 z-20 md:mt-[-50px]"
   >
     {/* Subtitle */}
-    <p className={styles.subtitle}>
+    <p className="text-white/70 font-bold font-helvetica text-lg sm:text-[25px]">
       {HERO_CONTENT.subtitle}
     </p>
 
     {/* Main Title */}
-    <h1 className={styles.title}>
+    <h1 className="text-white text-5xl sm:text-6xl md:text-[90px] lowercase font-elemental">
       {HERO_CONTENT.title}
     </h1>
 
     {/* Description */}
-    <p className={styles.description}>
+    <p className="text-white text-[10px] sm:text-[18px] text-justify max-w-[600px] leading-[1.5] sm:leading-[2] mt-4 font-helvetica">
       {HERO_CONTENT.description}
     </p>
 
@@ -330,9 +279,6 @@ HeroContent.displayName = 'HeroContent';
 export default function Section1() {
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
-  /**
-   * Triggers video loading when section enters viewport
-   */
   const handleViewportEnter = useCallback(() => {
     if (!shouldLoadVideo) {
       setShouldLoadVideo(true);
@@ -344,42 +290,8 @@ export default function Section1() {
       {/* Inject keyframes */}
       <style jsx global>{blobKeyframes}</style>
       
-      <section className="relative bg-transparent" aria-label="Hero Section">
-        {/* Animated Gradient Blobs */}
-
-        <BlobBox 
-          top="0" 
-          left="15%" 
-          background="#FFF"
-          displayNoneMobile={false}
-          widthHeight="450px"
-        />
-
-        <BlobBox 
-          top="-10%" 
-          left="0" 
-          background="#0366FE"
-          displayNoneMobile={false}
-          widthHeight="500px"
-        />
-
-        <BlobBox 
-          top="35%" 
-          right="0%" 
-          background="#FFF"
-          displayNoneMobile={true}
-          widthHeight="450px"
-        />
-
-        <BlobBox 
-          top="10%" 
-          right="0%" 
-          background="#0366FE"
-          displayNoneMobile={true}
-          widthHeight="500px"
-        />
-        
-        <div className={styles.container}>
+      <section className="relative bg-transparent overflow-hidden" aria-label="Hero Section">       
+        <div className="max-w-[1250px] mx-auto flex flex-col md:flex-row items-center gap-12 py-24 md:py-36 px-4 md:px-0">
           {/* Left Column: Hero Content */}
           <HeroContent />
 
@@ -390,7 +302,7 @@ export default function Section1() {
             transition={ANIMATION_CONFIG.transition}
             viewport={ANIMATION_CONFIG.viewport}
             onViewportEnter={handleViewportEnter}
-            className={styles.rightColumn}
+            className="hidden md:flex w-full md:w-1/2 justify-center z-20"
           >
             <HeroVideo shouldLoad={shouldLoadVideo} />
           </motion.div>
