@@ -21,7 +21,7 @@ export const SymSubmitButton: React.FC<SubmitButtonProps> = ({
     <Button
       onClick={onClick}
       disabled={!isValid || loading}
-      size="none"  // ← Use the new "none" size variant
+      // Remove size prop entirely - control sizing via className
       style={{
         background: !isValid
           ? "linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(3, 102, 254, 0.1) 100%)"
@@ -35,13 +35,14 @@ export const SymSubmitButton: React.FC<SubmitButtonProps> = ({
         w-full 
         px-4
         py-3
+        h-auto
         font-medium 
         lowercase 
         text-sm
         sm:text-lg
         rounded-xl 
         text-white
-        ${!isValid ? 'cursor-not-allowed pointer-events-none' : 'cursor-pointer'}
+        ${!isValid ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
       `}
     >
       {loading ? "Loading..." : children}
