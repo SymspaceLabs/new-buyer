@@ -27,7 +27,7 @@ interface MeasurementPagerops {
 }
 
 export default function MeasurementPage({ isEdit = true }: MeasurementPagerops) {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user, token } = useAuth();
   const router = useRouter();
 
   const [isMetric, setIsMetric] = useState(true);
@@ -62,7 +62,7 @@ export default function MeasurementPage({ isEdit = true }: MeasurementPagerops) 
         requestBody,
         {
           headers: {
-            Authorization: `Bearer ${user?.token}`,
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
         }
@@ -110,6 +110,8 @@ export default function MeasurementPage({ isEdit = true }: MeasurementPagerops) 
   }, [isAuthenticated, user]);
 
   const handleSave = async () => {
+    if (!user) return; 
+    
       const requestBody = {
         height: height.cm,
         weight: weight.kg,
@@ -146,19 +148,18 @@ export default function MeasurementPage({ isEdit = true }: MeasurementPagerops) 
             <Card className="w-full rounded-[15px] text-white p-6 flex flex-col items-center justify-between bg-gradient-to-br from-white/50 via-[#ebebeb]/36 to-[#c4c4c4]/10 sm:items-start sm:flex-row sm:justify-start">
                 <CardContent className="w-full p-0">
                     <MeasurementForm
-                    setIsMetric={setIsMetric}
-                    isMetric={isMetric}
-                    height={height}
-                    setHeight={setHeight}
-                    weight={weight}
-                    setWeight={setWeight}
-                    chest={chest}
-                    setChest={setChest}
-                    waist={waist}
-                    setWaist={setWaist}
-                    isEdit={isEdit}
-                    // Assuming MeasurementForm might need handleSaveChanges or other props
-                    // If handleSaveChanges is needed inside MeasurementForm, pass it here
+                      setIsMetric={setIsMetric}
+                      isMetric={isMetric}
+                      height={height}
+                      setHeight={setHeight}
+                      weight={weight}
+                      setWeight={setWeight}
+                      chest={chest}
+                      setChest={setChest}
+                      waist={waist}
+                      setWaist={setWaist}
+                      isEdit={isEdit}
+                      isMobile={false}
                     />
                 </CardContent>
             </Card>

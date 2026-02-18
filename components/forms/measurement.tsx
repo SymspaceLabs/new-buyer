@@ -31,9 +31,9 @@ interface MeasurementFormProps {
   setHeight: React.Dispatch<React.SetStateAction<Height>>;
   weight: Weight;
   setWeight: React.Dispatch<React.SetStateAction<Weight>>;
-  chest: number;
+  chest: number | undefined; 
   setChest: (value: number) => void;
-  waist: number;
+  waist: number | undefined;  // was: number
   setWaist: (value: number) => void;
   isMobile: boolean;
   sidebar?: boolean;
@@ -214,7 +214,7 @@ function MeasurementForm({
             <div className="relative">
               <input
                 type="number"
-                value={isMetric ? Math.round(chest) : Math.round(chest / 2.54)}
+                value={isMetric ? Math.round(chest ?? 0) : Math.round((chest ?? 0) / 2.54)}
                 onChange={(e) => {
                   const val = parseInt(e.target.value || "0", 10);
                   setChest(isMetric ? val : Math.round(val * 2.54));
@@ -238,7 +238,7 @@ function MeasurementForm({
             <div className="relative">
               <input
                 type="number"
-                value={isMetric ? Math.round(waist) : Math.round(waist / 2.54)}
+                value={isMetric ? Math.round(waist ?? 0) : Math.round((waist ?? 0) / 2.54)}
                 onChange={(e) => {
                   const val = parseInt(e.target.value || "0", 10);
                   setWaist(isMetric ? val : Math.round(val * 2.54));
