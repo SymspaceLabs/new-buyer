@@ -34,11 +34,12 @@ interface FieldErrors {
   [key: string]: string;
 }
 
+// In address form component
 interface AddressFormProps {
   data: Address;
   onChange: (field: keyof Address, value: string | boolean) => void;
   errors?: FieldErrors;
-  formRef?: RefObject<HTMLDivElement>;
+  formRef?: RefObject<HTMLDivElement | null>;  // Add | null here
 }
 
 interface CountryOption {
